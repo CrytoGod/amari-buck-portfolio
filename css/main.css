@@ -1,0 +1,31 @@
+#main-header {
+    max-width: 100%px;
+    height: 793px;
+    background: linear-gradient(to bottom, #000094, #00002E);
+}
+
+.logo {
+    width: 132px;
+    height: 97.88px;
+    margin-top: 20px;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    color: #714B4B;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.nav-bar a {
+    color: #714B4B;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+    color: #00ffff;
+}
