@@ -5,3 +5,62 @@
 #founders section {
   margin-bottom: 40px;
 }
+
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+
+  ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  li {
+      margin-bottom: 20px;
+  }
+
+  .form-input {
+      width: 535px;
+      height: 56px;
+      border: 2px solid #714b4b;
+      border-radius: 15px;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+      color: #714b4b;
+      background: none; // No background fill
+
+      &::placeholder {
+          color: #714b4b;
+      }
+  }
+
+  .form-select {
+      width: 535px;
+      height: 56px;
+      border: 2px solid #714b4b;
+      border-radius: 15px;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+      color: #714b4b;
+      background-color: white;
+      appearance: none; // Remove default styling
+      background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><polygon points="0,0 40,0 20,40" fill="%23714b4b" /></svg>') no-repeat right 15px center;
+      background-size: 40px 40px;
+      padding-right: 50px; // Space for the dropdown arrow
+
+      &::after {
+          content: '';
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          background-color: #714b4b;
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          right: 10px;
+          top: calc(50% - 20px);
+          border-radius: 3px;
+      }
+  }
+}
