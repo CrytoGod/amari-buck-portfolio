@@ -1,0 +1,5 @@
+//import mixins file to use, save it in the "m" namespace
+@use "mixins" as m;
+
+//use @inlcude to use a mixin, use the namespace then the mixin name
+@include m.fontFace(cantarellregular, "../fonts/cantarell_regular-webfont");
