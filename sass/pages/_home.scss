@@ -2,7 +2,7 @@
   display: block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .mob {
     display: none;
   }
@@ -17,6 +17,8 @@
     display: block;
   }
 }
+
+
 
 h2{
   font-size: 32px;
@@ -44,6 +46,8 @@ h2{
   &.rotated {
     transform: rotate(135deg); /* Rotate the button */
   }
+
+  
 }
 
 
@@ -61,7 +65,7 @@ h2{
   gap: 10px;
 
   &.active {
-    display: flex; /* Show when active */
+    display: inline; /* Show when active */
   }
 }
 
@@ -92,18 +96,27 @@ h2{
 
 
 .video-player{
-  width: 430px;
+  width: auto;
   height: 328px;
   margin-right: -50px;
   background-color: gray;
+
+  @media (max-width: 1200px) {
+    height: 392px; // Set height to 200px for screens smaller than 768px
+}
 }
 
 
 .main-media {
   margin-top: 40px;
-  width: 202px;
+  width: auto; // Corrected 'atuo' to 'auto'
   height: 177px;
   background-color: gray;
+
+  @media (max-width: 1200px) {
+      margin-top: 0px; // Set margin-top to 0 for screens smaller than 768px
+      height: 392px; // Set height to 200px for screens smaller than 768px
+  }
 }
 
 #recent {
@@ -114,8 +127,20 @@ h2{
 
 .image-size-1 {
   background-color: gray;
-  width: 400px;
+  width: auto;
   height: 550px;
+
+  @media (max-width: 1200px) {
+    margin-left: 20px; // Set height to 200px for screens smaller than 768px
+}
+}
+
+.banner {
+  width: auto;
+  height: 328px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  background-color: gray;
 }
 
 
@@ -127,6 +152,8 @@ h2{
   gap: 20px;
   width: 100%;
   overflow: hidden; // Prevent all cards from being shown at once
+
+
 }
 
 .row {
@@ -135,6 +162,12 @@ h2{
   width: 100%;
   overflow-x: scroll; // Horizontal scroll for the row
   scrollbar-width: none; // Hides scrollbar for better appearance
+
+  @media (max-width: 1200px) {
+    margin: 0 auto; // Center the element horizontally
+  // Add left margin for additional spacing
+    
+}
 }
 
 
@@ -143,7 +176,8 @@ h2{
   width: 350px; /* Card width */
   height: 403px; /* Card height */
   border-radius: 20px;
-  margin: 5px; /* Spacing between cards */
+  margin-top: 38px; /* Spacing between cards */
+  margin-right: 38px; /* Spacing between cards */
   background-color: #f0f0f0; /* Background color for cards */
   display: flex;
   justify-content: center;
@@ -157,6 +191,25 @@ h2{
 
 #about-us {
   margin-bottom: 40px;
+
+
+}
+
+.about-me-img {
+  background-color: gray;
+  width: auto;
+  height: 352px;
+}
+
+.abt-img {
+  width: 741px;
+  height: 741px;
+  margin-top: -150px;
+  z-index: -1; // Set z-index to -1 to place it in the background
+}
+
+.move-up {
+  margin-top: -250px;
 }
 
 #founders section {
@@ -178,7 +231,7 @@ h2{
   }
 
   .form-input, .form-select {
-    width: 100%;
+    
     height: 56px;
     border: 2px solid #714b4b;
     border-radius: 15px;

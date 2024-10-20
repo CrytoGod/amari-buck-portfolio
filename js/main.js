@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener("click", hamburgerMenu, false);
   })();
 
+// productCards
   (function () {
     const productCards = Array.from({ length: 9 }, (_, i) => `Card ${i + 1}`);
 
