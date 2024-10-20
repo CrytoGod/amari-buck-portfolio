@@ -7,9 +7,26 @@ body {
 
 h2 {
   font-family: v.$heading-font-family;
-  font-size: 64px;
   color: v.$primary-color;
-  margin-bottom: 20px;
+  
+
+  font-size: 32px; // Default font size
+
+  h2 {
+    font-family: v.$heading-font-family;
+    color: v.$primary-color;
+    margin-bottom: 20px;
+  
+    font-size: 32px; // Default font size
+  
+    @media (max-width: 768px) {
+      font-size: 64px; // Font size for max-width 768px
+    }
+  
+    @media (max-width: 1200px) {
+      font-size: 72px; // Font size for max-width 1200px
+    }
+  }
 }
 
 p {
@@ -17,4 +34,24 @@ p {
   margin-bottom: 20px;
   font-size: 16px;
   color: v.$body-text-color;
+
+  #whitey {
+    color: white;
+  }
 }
+
+#typewriter {
+  font-family: v.$heading-font-family;
+  color: #00FFFF; /* Set text color to #00FFFF */
+  margin-bottom: 20px;
+  font-size: 32px; // Default font size
+
+  // @media (max-width: 768px) {
+  //   font-size: 64px; // Font size for max-width 768px
+  // }
+
+  // @media (max-width: 1200px) {
+  //   font-size: 72px; // Font size for max-width 1200px
+  // }
+}
+
