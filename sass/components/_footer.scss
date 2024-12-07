@@ -1,17 +1,70 @@
 @use "../abstracts" as a;
 
-footer {
-  background-color: a.$accent-color;
-  color: white;
-  height: 40px;
-}
-
-footer p {
-  line-height: 40px;
-}
-
+/* Footer container */
 .footer {
-  width: auto;
-  height: 800px;
+  max-width: 100%;
+  height: auto;
   background: linear-gradient(180deg, #000094 0%, #00002E 100%);
+  position: relative; /* Establishes a stacking context for children */
+  z-index: 0; /* Ensures it doesn't overlap content with higher z-index */
+  overflow: hidden;
+}
+
+/* Navigation inside the footer */
+/* Footer navigation */
+#footer-nav {
+ 
+  
+  color: white;
+  z-index: 1; 
+  padding: 20px; /* Add some spacing for aesthetics */
+ 
+  border-radius: 8px; /* Rounded corners for nav container */
+}
+
+/* Navigation list */
+#footer-nav ul {
+  list-style: none; /* Removes default bullet points */
+
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  gap: 20px; /* Space between links */
+
+}
+
+/* Navigation links */
+#footer-nav li a {
+  text-decoration: none; /* Removes underline from links */
+  color: white;
+  font-size: 16px;
+  font-weight: 100;
+  transition: color 0.3s ease; /* Smooth hover effect */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#footer-nav li a:hover {
+  color: #00ffff; /* Change color on hover */
+}
+
+
+
+.icon {
+  margin: 50px auto;
+}
+
+.wit-3{
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
+  margin: 50px auto;
+}
+
+
+.jpp {
+  margin-top: 50px;
+  margin-left: 50px;
+  overflow: hidden;
+
 }

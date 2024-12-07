@@ -1,57 +1,50 @@
 //
 @use "../abstracts/variables" as v;
 
-body {
-  font-family: v.$body-font-family;
-}
-
-h2 {
-  font-family: v.$heading-font-family;
-  color: v.$primary-color;
-  
-
-  font-size: 32px; // Default font size
-
-  h2 {
-    font-family: v.$heading-font-family;
-    color: v.$primary-color;
-    margin-bottom: 20px;
-  
-    font-size: 32px; // Default font size
-  
-    @media (max-width: 768px) {
-      font-size: 64px; // Font size for max-width 768px
-    }
-  
-    @media (max-width: 1200px) {
-      font-size: 72px; // Font size for max-width 1200px
-    }
-  }
-}
-
-p {
-  line-height: 24px;
-  margin-bottom: 20px;
+.header-hello{
   font-size: 16px;
-  color: v.$body-text-color;
+  letter-spacing: 10px;
+  font-weight: 100;
+  opacity: 48%;
+  margin-top: 100px;
+  text-align: center;
+}
 
+#typewriter{
+  font-size: 72px;
+  font-weight: 600;
+  color: #000094;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#whitey {
+  text-align: center;
+  margin: 50px 50px 80px 50px;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px) {
+
+  .header-hello{
+    font-size: 16px;
+    letter-spacing: 10px;
+    font-weight: 100;
+    opacity: 48%;
+    margin-top: 40px;
+    text-align: left;
+  }
+
+  #typewriter{
+    font-size: 72px;
+    font-weight: 600;
+    color: #000094;
+    margin-top: 20px;
+    text-align: left;
+  }
   #whitey {
-    color: white;
+    text-align: left;
+    margin: 50px 0px 80px 0px;
+    font-weight: 400;
   }
 }
-
-#typewriter {
-  font-family: v.$heading-font-family;
-  color: #00FFFF; /* Set text color to #00FFFF */
-  margin-bottom: 20px;
-  font-size: 32px; // Default font size
-
-  // @media (max-width: 768px) {
-  //   font-size: 64px; // Font size for max-width 768px
-  // }
-
-  // @media (max-width: 1200px) {
-  //   font-size: 72px; // Font size for max-width 1200px
-  // }
-}
-
