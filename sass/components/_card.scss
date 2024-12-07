@@ -1,3 +1,69 @@
+#p{
+
+  margin: 100px auto;
+}
+
+
+.cards{
+  width: 350px;
+  height: 406px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(29, 29, 35, 0.5);
+}
+
+.cards img {
+  border-radius: 20px 20px 0 0;
+  width: 350px;
+  height: 293px;
+}
+
+.cards h3 {
+  color: #714B4B;
+  font-size: 16px;
+  font-weight: 300;
+ margin-top: 20px;
+  margin-left: 30px;
+}
+
+#z {
+  padding-top: 10px;
+}
+
+
+.button-mini {
+  width: 144px;
+  height: 32px;
+  border-radius: 20px;
+  border: 1px solid #714B4B;
+  text-align: center;
+  align-self: flex-end;
+  color: #714B4B;
+  float: right;
+  margin-top: -30px;
+  margin-right: 20px;
+
+  
+}
+
+.button-mini p {
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+  
+}
+
+.button-mini:hover {
+  width: 144px;
+  height: 32px;
+  border-radius: 20px;
+  border: 1px solid #000094;
+  text-align: center;
+  background-color: #000094;
+  color: white;
+
+  
+}
+
 .card {
   padding: 20px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
@@ -7,3 +73,53 @@
 .card:hover {
   transform: scale(1.05);
 }
+
+
+// product-card
+
+.portfolio-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden; // Prevent all cards from being shown at once
+  justify-content: center; // Align content vertically in the center
+  align-items: center;     // Align items horizontally in the center
+  height: 100vh;           // Make sure the section takes the full viewport height
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  overflow-x: scroll; // Horizontal scroll for the row
+  scrollbar-width: none; // Firefox - hides scrollbar
+  justify-content: center;
+  
+  // Hide scrollbar for webkit browsers
+  &::-webkit-scrollbar {
+    display: none; // Hides scrollbar for webkit browsers
+  }
+
+  @media (max-width: 1200px) {
+    margin: 0 auto; // Center the element horizontally
+    display: flex;
+
+    justify-content: center;
+  }
+}
+
+.card {
+  width: 350px; /* Card width */
+  height: 403px; /* Card height */
+  border-radius: 20px;
+  margin: 0 38px 38px 0; /* Top and right margins for spacing */
+  background-color: #f0f0f0; /* Background color for cards */
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0; // Ensures the card doesn’t shrink in the row
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for visibility */
+}
+
+

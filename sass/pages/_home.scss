@@ -1,327 +1,56 @@
-.mob {
-  display: block;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-@media (min-width: 1200px) {
-  .mob {
-    display: none;
-  }
-}
-
-.desk {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .desk {
-    display: block;
-  }
-}
-
-
-
-h2{
-  font-size: 32px;
-}
-
-.logo{
-  margin-top: 40px;
-  width: 89px;
-  height: 66px;
-}
-
-.menu-button {
-  margin-top: 40px;
-  margin-left: 35px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
-  flex-direction: column;
-  justify-content: space-around;
-  cursor: pointer;
-  transition: transform 0.3s ease; /* Smooth transition for rotation */
+#main-image {
+  max-width: 100%;
   
-  &.rotated {
-    transform: rotate(135deg); /* Rotate the button */
-  }
+  margin: 0;
+  overflow: hidden; /* Hides excess parts, if needed */
+}
 
+.main-image {
+  max-width: 100%;
   
+  margin: 0;
+  overflow: hidden; /* Hides excess parts, if needed */
 }
 
 
-
-.mini-box {
-  width: 18.9px;
-  height: 18.9px;
-  background-color: #00FFFF;
-  border-radius: 5px;
+#zima-banner{
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
 }
 
-.nav-bar {
-  display: none; /* Hide by default */
-  flex-direction: column; 
-  gap: 10px;
-
-  &.active {
-    display: inline; /* Show when active */
-  }
+.skills{
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-
-#trn {
-  padding: 40px;
-  margin-top: -42px;
-  background-color: white;
-  z-index: 1;
-  text-align: center;
-  border-radius: 20px;
- 
-  
-    h2 {
-      padding-bottom: 50px; /* Remove default margin */
-      
-      text-align: center; /* Center text horizontally */
-      width: 100%; /* Make sure it takes full width of the button */
-    }
-  
-}
- 
-
-.lower-header{
-  color: #6699CC;
-  margin-bottom: 40px;
+.me {
+  max-width: 100%;
+  margin-top: 100px;
 }
 
+@media screen and (min-width: 768px) { 
 
-.video-player{
-  width: auto;
-  height: 328px;
-  margin-right: -50px;
-  background-color: gray;
-
-  @media (max-width: 1200px) {
-    height: 392px; // Set height to 200px for screens smaller than 768px
-}
-}
-
-
-.main-media {
-  margin-top: 40px;
-  width: auto; // Corrected 'atuo' to 'auto'
-  height: 177px;
-  background-color: gray;
-
-  @media (max-width: 1200px) {
-      margin-top: 0px; // Reset margin-top to 0 for screens smaller than 1200px
-      height: 392px; // Set appropriate height for screens smaller than 1200px
-  }
-}
-
-#recent {
-  margin-top: 55px;
-}
-
-// graduate section
-
-.image-size-1 {
-  background-color: gray;
-  width: auto;
-  height: 550px;
-
-  @media (max-width: 1200px) {
-    margin-left: 20px; // Set height to 200px for screens smaller than 768px
-}
-}
-
-.banner {
-  width: auto;
-  height: 328px;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  background-color: gray;
-}
-
-
-// product-card
-
-.portfolio-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  overflow: hidden; // Prevent all cards from being shown at once
-  justify-content: center; // Align content vertically in the center
-  align-items: center;     // Align items horizontally in the center
-  height: 100vh;           // Make sure the section takes the full viewport height
-}
-
-.row {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  overflow-x: scroll; // Horizontal scroll for the row
-  scrollbar-width: none; // Firefox - hides scrollbar
-  
-  // Hide scrollbar for webkit browsers
-  &::-webkit-scrollbar {
-    display: none; // Hides scrollbar for webkit browsers
-  }
-
-  @media (max-width: 1200px) {
-    margin: 0 auto; // Center the element horizontally
-  }
-}
-
-.card {
-  width: 350px; /* Card width */
-  height: 403px; /* Card height */
-  border-radius: 20px;
-  margin: 0 38px 38px 0; /* Top and right margins for spacing */
-  background-color: #f0f0f0; /* Background color for cards */
-  display: flex;
-  justify-content: center;
-  flex-shrink: 0; // Ensures the card doesn’t shrink in the row
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for visibility */
-}
-
-
-
-
-
-#about-us {
-  margin-bottom: 40px;
-
-
-}
-
-.about-me-img {
-  background-color: gray;
-  width: auto;
-  height: 352px;
-}
-
-.abt-img {
-  width: 741px;
-  height: 741px;
-  margin-top: -150px;
-  z-index: -1; // Set z-index to -1 to place it in the background
-}
-
-.move-up {
-  margin: 50px;
-  @media (max-width: 1200px) {
-  margin-top: -250px;
-  }
-}
-
-#founders section {
-  margin-bottom: 40px;
-}
-
-
-.box-contact{
-  background-color: grey;
-  height: 352px;
-  width: auto;
-}
-
-.contact-form {
-  width: auto;
-  margin: 0 auto;
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  li {
-    margin-bottom: 20px;
-  }
-
-  .form-input, .form-select {
-    height: 56px;
-    border: 2px solid #714b4b;
-    border-radius: 15px;
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 16px;
-    color: #714b4b;
-    background: none;
-
-    &::placeholder {
-      color: #714b4b;
-    }
-  }
-
-  .form-select {
-    background-color: white;
-    appearance: none;
-    background: none;
-    padding-right: 50px;
-    position: relative;
-    z-index: 1;
+  #main-image {
+    max-width: 100%;
     
-    // Custom triangle with border-radius
-    &::after {
-      content: '';
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      background-color: #714b4b;
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      border-radius: 3px;
-    }
+    margin-top: -150%;
+    overflow: hidden; /* Hides excess parts, if needed */
+  }   
+
+
+  #main-image img {
+   max-width: 100%;
+   height: 924px;
+   border-radius: 0 0 0 180px;
+   
+    
+   
+    overflow: hidden; /* Hides excess parts, if needed */
   }
-}
-
-// Mobile-first design (default for smaller screens)
-@media (max-width: 412px) {
-  .form-input, .form-select {
-    width: 393px; // Adjusted for mobile screens with 393px width
-    height: 56px; // Maintain height
-    font-size: 14px; // Smaller font size for smaller screens
-    padding: 8px;
-  }
-}
-
-// For larger screens (desktop)
-@media (min-width: 768px) {
-  .form-input, .form-select {
-    max-width: 535px; // Expand to 535px width on desktop
-    height: 56px; // Maintain height
-    font-size: 16px; // Standard font size for desktop
-  }
-}
-
-.form-group {
-  position: relative;
-  width: 100%;
-  max-width: 535px;
-  margin-bottom: 20px;
-}
-
-.floating-label {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: #714b4b;
-  transition: all 0.3s ease;
-  pointer-events: none;
-  background-color: white;
-  padding: 0 5px;
-}
-
-.form-select:focus + .floating-label,
-.form-select:not(:placeholder-shown) + .floating-label {
-  top: -10px;
-  font-size: 12px;
-  color: #714b4b;
+  
 }

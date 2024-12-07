@@ -1,0 +1,141 @@
+.wit{
+    color: white;
+    font-size: 64px;
+    margin-top: 120px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+.blue-2{
+    background-color: #000094;
+    max-width: 100%;
+    height: 1450px;
+    z-index: -1;
+    margin-top: -5px;
+}
+
+.lig{
+    color: #6699CC;
+    font-size: 32px;
+    
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+.wit-2{
+    color: white;
+    font-size: 16px;
+  
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+
+.lig-2{
+    color: white;
+    font-size: 32px;
+
+    margin-bottom: 50px;
+}
+
+
+
+
+
+ 
+#contact-hero-form form {
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ #contact-hero-form input, textarea {
+    padding: 22px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    font: inherit;
+    width: 100%;
+    height: 56px;
+ }
+ 
+ #contact-hero-form textarea {
+    height: 350px;
+    color: #ffffff;
+ }
+ 
+ #contact-hero-form input[type="submit"] {
+    width: 170px;
+    height: 38px;
+    border-radius: 20px;
+    padding: 12px 28px;
+    border: 1px solid white;
+    color: #fff;
+    display: inline-block;
+    align-items: center;
+    text-align: center; /* Centers the text horizontally */
+    vertical-align: middle;
+    transition: all 200ms ease-in;
+   
+    align-self: flex-end;
+ }
+
+ #contact-hero-form input[type="submit"]:hover {
+    background-color: white;
+    color: #000094;
+
+    
+ }
+
+
+
+/* Container to make the select box look like an input */
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+  
+  .custom-select select {
+    width: 100%;
+    height: 56px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 20px;
+    appearance: none; /* Remove default browser styles */
+    background: transparent;
+    font-size: 16px;
+    color: #868686;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* Adding a custom arrow to the dropdown */
+  .custom-select::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 20px;
+    color: #ffffff;
+   
+  }
+  
+
+  
+  .custom-select select option {
+    padding: 5px;
+    background-color: #fff;
+    color: #333;
+  }
+
