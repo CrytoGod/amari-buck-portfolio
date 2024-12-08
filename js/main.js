@@ -226,6 +226,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // productCards
 
+// svg
 
 
 

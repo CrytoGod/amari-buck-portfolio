@@ -23,6 +23,59 @@
 }
 
 .abt-img{
-    margin: 80px 50px;
-    width: 396px;
+    margin: 50px auto;
+    width: 412px;
 } 
+
+#space{
+    margin-top: 50px;
+}
+
+#down {
+    margin: 0;
+}
+
+@media screen and (min-width: 768px) { 
+
+
+    .abt-img{
+      
+       margin-bottom: 100px;
+        width: 263px;
+        height: auto;
+    } 
+    
+
+    #down {
+       margin-top: 50px;
+    }
+
+    #space{
+        margin-top: -400px;
+        
+    }
+
+}
+
+
+@media screen and (min-width: 1200px) { 
+
+
+    .abt-img{
+      
+       margin-bottom: 100px;
+        width: 263px;
+        height: auto;
+    } 
+    
+
+    #down {
+       margin-top: 150px;
+    }
+
+    #space{
+        margin-top: -400px;
+        
+    }
+
+}
