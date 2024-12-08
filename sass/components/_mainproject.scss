@@ -19,3 +19,19 @@
     color: #714B4B;
     margin-bottom: 50px;
 }
+
+@media screen and (min-width: 1200px) { 
+
+    #player-container-2 {
+
+        border-radius: 20px;
+      
+      }
+    .main-image{
+        border-radius: 20px;
+    }
+
+    .main-image img{
+       height: 100%;
+    }
+}

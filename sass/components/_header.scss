@@ -41,7 +41,27 @@ header{
    display: block;
 }
 
+#main-nav-2 button {
+   position: absolute;
+   top: 20px;
+   right: 30px;
+   width: 50px;
+   height: 50px;
+   background: url(../images/burger-copy.svg) no-repeat center;
+   margin-top: 15px;
+   margin-bottom: 20px;
+   transition: all .5s ease;
+   border: 0;
+   justify-self: end;
+   display: block;
+}
+
+
 #main-nav button.expanded {
+   transform: rotate(90deg);
+}
+
+#main-nav-2 button.expanded {
    transform: rotate(90deg);
 }
 
@@ -59,7 +79,21 @@ header{
   margin-top: -50px;
 }
 
+#main-nav-2{
+   margin-top: -50px;
+ }
+
+
 #main-nav ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   background-color: #000094;
+   border-radius: 0 0 20px 20px;
+
+}
+
+#main-nav-2 ul {
    list-style: none;
    padding: 0;
    margin: 0;
@@ -71,7 +105,19 @@ header{
 
 
 
+
 #main-nav ul li a {
+   display: block;
+   padding: 10px 0 10px 0;
+   text-align: center;
+   color: #a5a5a5;
+   text-decoration: none;
+   
+   
+
+}
+
+#main-nav-2 ul li a {
    display: block;
    padding: 10px 0 10px 0;
    text-align: center;
@@ -87,9 +133,20 @@ header{
 
 }
 
+#main-nav-2 ul li a:hover {
+   color: #00ffff;
+
+
+}
+
+
 
 
 #main-nav ul li:last-child {
+   margin-bottom: 10px;
+}
+
+#main-nav-2 ul li:last-child {
    margin-bottom: 10px;
 }
 
@@ -100,6 +157,14 @@ header{
 @media screen and (min-width: 768px) {
 
 
+   .logo {
+      width: 100px;
+      height: auto;
+      margin-top: 20px;
+      padding-top: 10px;
+      margin-left: 10px;
+   }
+
    .burger{
        display: none;
    }
@@ -107,6 +172,10 @@ header{
    #main-nav button{
        display: none;
     }
+
+    #main-nav-2 button{
+      display: none;
+   }
     
     #burger-con {
        margin-bottom: 20px;
@@ -124,7 +193,7 @@ header{
     #main-nav ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin-top: -20px;
       background-color: transparent;
       border-radius: 0;
    
@@ -136,9 +205,28 @@ header{
        color: #fff;
     }
     #main-nav ul li a:hover {
-     color: #00ffff;
+     color: #000094;
   
   }
+
+  #main-nav-2 ul {
+   list-style: none;
+   padding: 0;
+   margin-top: -20px;
+   background-color: transparent;
+   border-radius: 0;
+
+}
+
+ #main-nav-2 ul li a {
+    display: inline;
+    text-decoration: none;
+    color: #fff;
+ }
+ #main-nav-2 ul li a:hover {
+  color: #000094;
+
+}
     
     #burger-con ul li {
        margin-right: 10px;
@@ -161,6 +249,18 @@ header{
        top: 25px;
        right: 100px;
     }
+
+
+        
+    #main-nav-2 {
+       
+      padding-left: 25px;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      position: absolute;
+      top: 25px;
+      right: 100px;
+   }
 
 
 }

@@ -3,6 +3,7 @@
 /* Footer container */
 .footer {
   max-width: 100%;
+  padding-top: 50px;
   height: auto;
   background: linear-gradient(180deg, #000094 0%, #00002E 100%);
   position: relative; /* Establishes a stacking context for children */
@@ -66,5 +67,17 @@
   margin-top: 50px;
   margin-left: 50px;
   overflow: hidden;
+
+}
+
+@media screen and (min-width: 1200px) { 
+
+  .jpp {
+    margin-top: -20%;
+    margin-left: 50%;
+    overflow: hidden;
+
+  
+  }
 
 }

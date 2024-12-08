@@ -6,9 +6,9 @@ require_once('include/connect.php');
 
 //gather elements from the submitted form
 
-$fname = $_POST['first_name'];
-$lname = $_POST['last_name'];
+$fname = $_POST['fullname'];
 $email = $_POST['email'];
+$phone = $_POST['phone'];
 $comments = $_POST['comments'];
 
 
@@ -16,19 +16,20 @@ $comments = $_POST['comments'];
 // check form items for errors
 
 $fname = trim($fname);
-$lname = trim($lname);
+
 $email = trim($email);
+$phone = trim($phone);
 $comments = trim($comments);
 
 
 
 // inserts new row in the contacts table
 
-$query ="INSERT INTO contacts(id, fname, lname, email, comments) VALUES (NULL, '".$fname."','".$lname."','".$email."','".$comments."')" ;
+$query ="INSERT INTO contact(id, fname, email, phone, comments) VALUES (NULL, '".$fname."','".$email."','".$phone."','".$comments."')" ;
 
 mysqli_query($connect, $query);
 
-header('Location: contact.php');
+header('Location: index.php');
 
 
 //format an email and email it to myself
