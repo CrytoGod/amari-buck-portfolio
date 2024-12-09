@@ -2,11 +2,20 @@
 <?php
 require_once('include/connect.php');
 
-$query = 'SELECT * FROM projects, media WHERE project_id = projects.id AND projects.id ='.$_GET['id'];
+$query = "SELECT projects.id AS project, projects.title, projects.project_brief, projects.done_by, projects.market_analyise, projects.brand_strategy, projects.design_process, projects.challenges, projects.conclusion_and_learnings,projects.links_to_other_projects, projects.thumbnail, GROUP_CONCAT(media.image_video) AS media FROM projects JOIN media ON projects.id = media.project_id WHERE projects.id = " . $_GET['id'] . " GROUP BY projects.id";
+
+
 
 $results = mysqli_query($connect,$query);
 
 $row = mysqli_fetch_assoc($results);
+
+$image_array = explode(',', $row['media']);
+
+// visual check
+echo '<pre style="color: red;">';
+print_r($image_array);
+echo '</pre>';
 
 ?>
 <head>
@@ -39,10 +48,10 @@ $row = mysqli_fetch_assoc($results);
                <!-- Navigation Menu -->
           <nav id="main-nav-2" class="col-span-full m-col-start-4 m-col-end-11">
      
-              <button id="button"></button>
-                 <div id="burger-con">
+              <button class="button"></button>
+                 <div class="burger-con">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#about">About</a></li>
                         
@@ -81,8 +90,8 @@ $row = mysqli_fetch_assoc($results);
 <?php echo '
                     <section id="player-container-2" class="col-span-full l-col-start-1 l-col-end-8 player-container">
                     
-                    <video controls preload="metadata" poster="images/placeholder.png">
-                        <source src="video/' . $row['image_video'] . '" type="video/mp4" />
+                    <video controls preload="metadata" poster="images/placeholder.jpg">
+                       <source src="video/'.$image_array[0].'" type="video/mp4" />
                         
                         <p>Your browser does not support the video tag.</p>
                     </video>
@@ -111,7 +120,7 @@ $row = mysqli_fetch_assoc($results);
 
     
                     <div class="col-span-full l-col-start-8 l-col-end-13 main-image"> 
-                        <img src="images/' . $row['image_video'] . '" alt="main">
+                        <img src="images/'.$image_array[1].'" alt="main">
                     </div> ' ; ?>
 
 </div>
@@ -137,9 +146,24 @@ $row = mysqli_fetch_assoc($results);
 <?php echo '<div class="col-span-full p-main-2"> <p> <span class=heavy> Design Process:</span> ' . $row['design_process'] . '</p> </div>'; ?>
 </div>
 
+<div class="grid-con">
+<?php echo 
+'
+        <div class="col-span-full m-col-start-1 m-col-end-4 d-image"><img src="images/'.$image_array[2].'" alt="promo images" ></div>
 
+        <div class="col-span-full m-col-start-5 m-col-end-8 d-image"><img src="images/'.$image_array[3].'" alt="promo images" ></div>
+        <div class="col-span-full m-col-start-9 m-col-end-13 d-image"><img src="images/'.$image_array[4].'" alt="promo images" ></div>
+'; 
+?>
+</div>
 
+<div class="grid-con">
+<?php echo '<div class="col-span-full p-main-2"> <p> <span class=heavy> Challenges:</span> ' . $row['challenges'] . '</p> </div>'; ?>
+</div>
 
+<div class="grid-con">
+<?php echo '<div class="col-span-full p-main-2"> <p> <span class=heavy> Conclusion and learnings:</span> ' . $row['conclusion_and_learnings'] . '</p> </div>'; ?>
+</div>
 
 </main>
 
@@ -153,11 +177,15 @@ $row = mysqli_fetch_assoc($results);
     <div id="portfolio-cards" class="col-span-full">
 <div class="row">
 <?php
+$query2 = 'SELECT projects.id AS project, projects.title,thumbnail, projects.project_brief, category.title AS category, GROUP_CONCAT(media.image_video) AS media_files FROM projects JOIN media ON projects.id = media.project_id JOIN category ON category.id = projects.category_id GROUP BY projects.id
+';
+
+$results2 = mysqli_query($connect, $query2);
 // Initialize $cell variable for column control
 $cell = 0;
 
 if ($results && mysqli_num_rows($results) > 0) {
-    while ($row = mysqli_fetch_array($results)) {
+    while ($row = mysqli_fetch_array($results2)) {
         // Increase the $cell counter
         if ($cell == 3) {
             $cell = 1; // Reset to the first column if it reaches 3
@@ -170,7 +198,7 @@ if ($results && mysqli_num_rows($results) > 0) {
             // Left column
             echo '
                 <div class="cards col-span-full l-col-start-1 l-col-span-2">
-                    <img src="images/' . $row['media_files'] . '" alt="main">
+                    <img src="images/' . $row['thumbnail'] . '" alt="main">
                     <h3>' . $row['title'] . '</h3>
                     <h3>' . $row['category'] . '</h3>
                     <div class="button-mini">
@@ -181,7 +209,7 @@ if ($results && mysqli_num_rows($results) > 0) {
             // Middle column
             echo '
                 <div class="cards col-span-full l-col-start-5 l-col-span-2">
-                    <img src="images/' . $row['media_files'] . '" alt="main">
+                    <img src="images/' . $row['thumbnail'] . '" alt="main">
                     <h3>' . $row['title'] . '</h3>
                     <h3>' . $row['category'] . '</h3>
                     <div class="button-mini">
@@ -192,7 +220,7 @@ if ($results && mysqli_num_rows($results) > 0) {
             // Right column
             echo '
                 <div class="cards col-span-full l-col-start-9 l-col-span-2">
-                    <img src="images/' . $row['media_files'] . '" alt="main">
+                    <img src="images/' . $row['thumbnail'] . '" alt="main">
                     <h3>' . $row['title'] . '</h3>
                     <h3>' . $row['category'] . '</h3>
                     <div class="button-mini">
@@ -222,7 +250,7 @@ if ($results && mysqli_num_rows($results) > 0) {
           <div>
             <ul>
               <li><a href="#contact">CONTACT</a></li>
-              <li><a href="#products">PRODUCTS</a></li>
+              <li><a href="#p">PROJECTS</a></li>
               <li><a href="#about">ABOUT</a></li>
             </ul>
           </div>
@@ -250,7 +278,9 @@ if ($results && mysqli_num_rows($results) > 0) {
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/thirdparty.js"></script>
    

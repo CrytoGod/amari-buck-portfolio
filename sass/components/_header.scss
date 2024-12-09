@@ -65,13 +65,13 @@ header{
    transform: rotate(90deg);
 }
 
-#burger-con {
+.burger-con {
    margin-top: 20px;
    margin-bottom: 20px;
    display: none;
 }
 
-#burger-con.slide-toggle {
+.burger-con.slide-toggle {
    display: block;
 }
 
@@ -177,14 +177,14 @@ header{
       display: none;
    }
     
-    #burger-con {
+    .burger-con {
        margin-bottom: 20px;
        display: block;
        font-size: 16px;
        margin-top: 28px;
     }
 
-   #burger-con ul li, #burger-con ul li:first-child {
+   .burger-con ul li, #burger-con ul li:first-child {
        border: none;
        display: inline;
        margin-right: 25px;
@@ -228,11 +228,11 @@ header{
 
 }
     
-    #burger-con ul li {
+    .burger-con ul li {
        margin-right: 10px;
     }
     
-    #burger-con ul li:last-child {
+    .burger-con ul li:last-child {
        margin-right: 0px;
     }
     
@@ -259,7 +259,7 @@ header{
       margin-bottom: 2%;
       position: absolute;
       top: 25px;
-      right: 100px;
+      right: 15%;
    }
 
 

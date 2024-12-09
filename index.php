@@ -13,11 +13,10 @@ require_once('include/connect.php');
 
 // $connect = new mysqli('localhost','root','root','books');
 
-$query = 'SELECT projects.id AS project, projects.title, projects.project_brief, category.title AS category, GROUP_CONCAT(media.image_video) AS media_files FROM projects JOIN media ON projects.id = media.project_id JOIN category ON category.id = projects.category_id GROUP BY projects.id, projects.title, projects.project_brief, category.title
+$query = 'SELECT projects.id AS project, projects.title,thumbnail, projects.project_brief, category.title AS category, GROUP_CONCAT(media.image_video) AS media_files FROM projects JOIN media ON projects.id = media.project_id JOIN category ON category.id = projects.category_id GROUP BY projects.id
 ';
 
 $results = mysqli_query($connect, $query);
-
 
 
 ?>
@@ -57,11 +56,11 @@ $results = mysqli_query($connect, $query);
                <!-- Navigation Menu -->
           <nav id="main-nav" class="col-span-full m-col-start-4 m-col-end-11">
      
-              <button id="button"></button>
-                 <div id="burger-con">
+              <button class="button"></button>
+                 <div class="burger-con">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#products">Products</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="#p">Projects</a></li>
                         <li><a href="#about">About</a></li>
                         
                     </ul>
@@ -148,7 +147,7 @@ $results = mysqli_query($connect, $query);
                 
                                     <section id="player-container-2" class="col-span-full l-col-start-1 l-col-end-8 player-container">
                                     
-                                    <video controls preload="metadata" poster="images/placeholder.png">
+                                    <video controls preload="metadata" poster="images/placeholder.jpg">
                                         <source src="video/final.2.mp4" type="video/mp4" />
                                         <source src="video/video.webm" type="video/webm" />
                                         <p>Your browser does not support the video tag.</p>
@@ -229,7 +228,7 @@ $results = mysqli_query($connect, $query);
                     // Left column
                     echo '
                         <div class="cards col-span-full l-col-start-1 l-col-span-2">
-                            <img src="images/' . $row['media_files'] . '" alt="main">
+                            <img src="images/' . $row['thumbnail'] . '" alt="main">
                             <h3>' . $row['title'] . '</h3>
                             <h3>' . $row['category'] . '</h3>
                             <div class="button-mini">
@@ -240,7 +239,7 @@ $results = mysqli_query($connect, $query);
                     // Middle column
                     echo '
                         <div class="cards col-span-full l-col-start-5 l-col-span-2">
-                            <img src="images/' . $row['media_files'] . '" alt="main">
+                            <img src="images/' . $row['thumbnail'] . '" alt="main">
                             <h3>' . $row['title'] . '</h3>
                             <h3>' . $row['category'] . '</h3>
                             <div class="button-mini">
@@ -251,7 +250,7 @@ $results = mysqli_query($connect, $query);
                     // Right column
                     echo '
                         <div class="cards col-span-full l-col-start-9 l-col-span-2">
-                            <img src="images/' . $row['media_files'] . '" alt="main">
+                            <img src="images/' . $row['thumbnail'] . '" alt="main">
                             <h3>' . $row['title'] . '</h3>
                             <h3>' . $row['category'] . '</h3>
                             <div class="button-mini">
@@ -292,7 +291,7 @@ $results = mysqli_query($connect, $query);
     </section>
 
 
-    <div class="col-span-full m-col-start-1 m-col-end-5 me"><img src="images/Subject.png" alt="me"></div>
+    <div class="col-span-full m-col-start-1 m-col-end-5 me" ><img src="images/Subject.png" alt="me" id="about"></div>
     <div class="blue"></div> 
      <!-- About me section -->
     <section class="grid-con">
@@ -307,7 +306,7 @@ $results = mysqli_query($connect, $query);
         </div>
 
      
-        <a href="index.html"> <img src="images/file.svg" alt="jp" class="desk abt-img col-span-full m-col-start-1 m-col-end-6"></a>
+        <img src="images/file.svg" alt="jp" class="desk abt-img col-span-full m-col-start-1 m-col-end-6">
 
         <p class="col-span-full m-col-start-6 m-col-end-13 recent" id="down" >Hey there, I'm Amari, a proud graduate of the College of Fanshawe. Art has always been my passion, with drawing being my sanctuary since childhood. As I grew, my artistic journey naturally evolved into design, a realm seemingly different yet deeply intertwined with my creative spirit. Falling head over heels for this craft, I embraced it wholeheartedly, adding it to my arsenal of skills. I'm all about pushing boundaries and constantly honing my craft, striving to put my best foot forward with every project. I firmly believe in the endless possibilities that creativity holds, and I'm thrilled to embark on this journey with you. Let's turn your ideas into tangible realities, showing you that it's not just a fantasy but a promise waiting to be fulfilled.</p>
         
@@ -316,6 +315,7 @@ $results = mysqli_query($connect, $query);
 
 
         </section>
+
 
      <!-- Contact section -->
    <div class="blue-2">
@@ -373,8 +373,8 @@ $results = mysqli_query($connect, $query);
         <nav id="footer-nav" class="col-start-1 col-end-3 m-col-start-1 m-col-end-4">
           <div>
             <ul>
-              <li><a href="#contact">CONTACT</a></li>
-              <li><a href="#products">PRODUCTS</a></li>
+              <li><a href="#contact-hero-form">CONTACT</a></li>
+              <li><a href="#p">PROJECTS</a></li>
               <li><a href="#about">ABOUT</a></li>
             </ul>
           </div>
@@ -402,7 +402,9 @@ $results = mysqli_query($connect, $query);
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/thirdparty.js"></script>
    
