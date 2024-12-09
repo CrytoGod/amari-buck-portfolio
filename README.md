@@ -1,5 +1,8 @@
 # Amari Buck - Portfolio
 
+
+![Image of Me](./images/Subject.png)
+
 ## **About Me**
 Hi, I’m **Amari Buck**, a Motion Designer and Interactive Media enthusiast with a passion for pushing creative boundaries. I am a graduate of **Fanshawe College's Interactive Media Design** program, where I honed my skills in web development, design, and motion graphics.
 
