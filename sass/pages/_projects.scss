@@ -46,6 +46,12 @@
     justify-items: center;
     align-self: center;
     justify-content: center;
+    border-radius: 20px;
+}
+
+.d-image img{
+    width: 100%;
+    border-radius: 20px;
 }
 
 @media screen and (min-width: 768px) { 

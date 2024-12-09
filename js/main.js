@@ -226,6 +226,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // productCards
 
+(function () {
+  // Helper function to check if we're on a specific page
+  function isPage(pageName) {
+    return window.location.pathname.includes(pageName);
+  }
+
+  // Function to apply the auto-slide effect
+  function enableAutoSlide() {
+    const row = document.querySelector('.row');
+    if (!row) return; // Exit if the `.row` element is not found
+
+    let scrollAmount = 0; // Keeps track of the current scroll position
+    const scrollStep = 2; // Adjust scroll speed
+    const scrollInterval = 30; // Adjust time interval for scrolling
+    let direction = 1; // 1 for forward, -1 for backward
+
+    function autoSlide() {
+      // Scroll the row
+      scrollAmount += scrollStep * direction;
+      row.scrollLeft = scrollAmount;
+
+      // Check boundaries and reverse direction if needed
+      if (scrollAmount >= row.scrollWidth - row.clientWidth || scrollAmount <= 0) {
+        direction *= -1; // Reverse direction
+      }
+    }
+
+    // Start the auto-slide
+    setInterval(autoSlide, scrollInterval);
+  }
+
+  // Enable auto-slide if on index.php, detail.php, or if the `.row` exists
+  if (document.querySelector('.row') || isPage("index.php") || isPage("detail.php")) {
+    enableAutoSlide();
+  }
+})();
+
+
+
 // svg
 
 

@@ -13,9 +13,9 @@ $row = mysqli_fetch_assoc($results);
 $image_array = explode(',', $row['media']);
 
 // visual check
-echo '<pre style="color: red;">';
-print_r($image_array);
-echo '</pre>';
+// echo '<pre style="color: red;">';
+// print_r($image_array);
+// echo '</pre>';
 
 ?>
 <head>
@@ -149,9 +149,9 @@ echo '</pre>';
 <div class="grid-con">
 <?php echo 
 '
-        <div class="col-span-full m-col-start-1 m-col-end-4 d-image"><img src="images/'.$image_array[2].'" alt="promo images" ></div>
+        <div class="col-span-full m-col-start-1 m-col-end-5 d-image"><img src="images/'.$image_array[2].'" alt="promo images" ></div>
 
-        <div class="col-span-full m-col-start-5 m-col-end-8 d-image"><img src="images/'.$image_array[3].'" alt="promo images" ></div>
+        <div class="col-span-full m-col-start-5 m-col-end-9 d-image"><img src="images/'.$image_array[3].'" alt="promo images" ></div>
         <div class="col-span-full m-col-start-9 m-col-end-13 d-image"><img src="images/'.$image_array[4].'" alt="promo images" ></div>
 '; 
 ?>
@@ -174,7 +174,7 @@ echo '</pre>';
     <p class="col-span-full m-col-start-1 m-col-end-8 p-main">Let my visuals nourish your mind and enjoy the creative ambiance. Allow me to guide you through my process step by step, 
         providing all the details for this project below.</p>
 
-    <div id="portfolio-cards" class="col-span-full">
+<div id="portfolio-cards" class="col-span-full">
 <div class="row">
 <?php
 $query2 = 'SELECT projects.id AS project, projects.title,thumbnail, projects.project_brief, category.title AS category, GROUP_CONCAT(media.image_video) AS media_files FROM projects JOIN media ON projects.id = media.project_id JOIN category ON category.id = projects.category_id GROUP BY projects.id
