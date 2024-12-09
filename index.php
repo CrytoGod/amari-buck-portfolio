@@ -107,7 +107,7 @@ $results = mysqli_query($connect, $query);
             <section id="player-container" class="col-span-full player-container">
                
               <video controls preload="metadata" poster="images/placeholder.png">
-                <source src="video/final.2.mp4" type="video/mp4" />
+                <source src="video/final.3.mp4" type="video/mp4" />
                 <source src="video/video.webm" type="video/webm" />
                 <p>Your browser does not support the video tag.</p>
               </video>
@@ -148,7 +148,7 @@ $results = mysqli_query($connect, $query);
                                     <section id="player-container-2" class="col-span-full l-col-start-1 l-col-end-8 player-container">
                                     
                                     <video controls preload="metadata" poster="images/placeholder.jpg">
-                                        <source src="video/final.2.mp4" type="video/mp4" />
+                                        <source src="video/kiku-video.mp4" type="video/mp4" />
                                         <source src="video/video.webm" type="video/webm" />
                                         <p>Your browser does not support the video tag.</p>
                                     </video>
