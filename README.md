@@ -16,7 +16,7 @@ This portfolio is a showcase of the projects I’ve worked on, emphasizing both 
 - [License](#license)
 - [Contact](#contact)
 
----
+--- 
 
 ## **Introduction**
 This portfolio was built to present my projects and skills as a **motion designer**. Throughout my journey at Fanshawe College, I focused on combining motion graphics with interactive media to create engaging and dynamic web experiences.
@@ -35,7 +35,7 @@ This portfolio was built to present my projects and skills as a **motion designe
 - **`scss/`**: SCSS files used for dynamic and maintainable styling.
 - **`images/`**: Assets including custom illustrations and design elements.
 - **`index.html`**: The main HTML file for the portfolio.
-
+- **`index.php`**: The main PHP file for the portfolio.
 ---
 
 ## **Technologies**

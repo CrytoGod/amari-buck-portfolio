@@ -202,25 +202,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // menubar
 (() => {
-    (function(){
-      "use strict";	
-      console.log("fired");
-    
-      let button = document.querySelector("#button");
-      let burgerCon = document.querySelector("#burger-con");
-    
-      function hamburgerMenu() {
-        burgerCon.classList.toggle("slide-toggle");
-        button.classList.toggle("expanded");
-      };
-    
-      // let hamburgerMenu = () => {
-      // 	burgerCon.classList.toggle("slide-toggle");
-      // 	button.classList.toggle("expanded");
-      // };
-    
-      button.addEventListener("click", hamburgerMenu, false);		
-    })();
+  (function () {
+    "use strict";
+    console.log("fired");
+  
+    // Select elements
+    let button = document.querySelector(".button");
+    let burgerCon = document.querySelector(".burger-con");
+  
+    // Function to toggle the menu
+    function hamburgerMenu() {
+      burgerCon.classList.toggle("slide-toggle");
+      button.classList.toggle("expanded");
+    }
+  
+    // Check if elements exist before adding event listeners
+    if (button && burgerCon) {
+      button.addEventListener("click", hamburgerMenu, false);
+    }
+  })();
     
   })();
 
@@ -230,3 +230,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+(() => {
+  gsap.registerPlugin(ScrollToPlugin);
+
+  const navlinks = document.querySelectorAll("#header-con nav ul li a");
+
+  function scrollLink(e) {
+    console.log(e.currentTarget.hash);
+    // prevent links from default behaviour/ jumping
+    e.preventDefault();
+    let selectedLink = e.currentTarget.hash;
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: { y: `${selectedLink}`, offsetY: 100, ease: "BounceOut" },
+    });
+  }
+
+  navlinks.forEach((link) => {
+    link.addEventListener("click", scrollLink);
+  });
+})();
