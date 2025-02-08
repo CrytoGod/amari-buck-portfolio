@@ -13,10 +13,14 @@ require_once('include/connect.php');
 
 // $connect = new mysqli('localhost','root','root','books');
 
-$query = 'SELECT projects.id AS project, projects.title,thumbnail, projects.project_brief, category.title AS category, GROUP_CONCAT(media.image_video) AS media_files FROM projects JOIN media ON projects.id = media.project_id JOIN category ON category.id = projects.category_id GROUP BY projects.id
-';
+// $query = 'SELECT projects.id AS project, projects.title,thumbnail, projects.project_brief, category.title AS category, GROUP_CONCAT(media.image_video) AS media_files FROM projects JOIN media ON projects.id = media.project_id JOIN category ON category.id = projects.category_id GROUP BY projects.id
+// ';
 
-$results = mysqli_query($connect, $query);
+$stmt = $connect->prepare("SELECT projects.id AS project, projects.title,thumbnail, projects.project_brief, category.title AS category, GROUP_CONCAT(media.image_video) AS media_files FROM projects JOIN media ON projects.id = media.project_id JOIN category ON category.id = projects.category_id GROUP BY projects.id");
+
+$stmt->execute();
+
+
 
 
 ?>
@@ -28,7 +32,7 @@ $results = mysqli_query($connect, $query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="images/Madzen-browser-icon.ico"  rel="icon" type="image/x-icon">
+    <link href="images/madzen-logo-aqua.svg"  rel="icon" type="image/x-icon">
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -210,59 +214,43 @@ $results = mysqli_query($connect, $query);
      
             <div id="portfolio-cards" class="col-span-full">
     <div class="row">
-        <?php
-        // Initialize $cell variable for column control
-        $cell = 0;
+    <?php
+// Initialize $cell variable for column control
+$cell = 0;
 
-        if ($results && mysqli_num_rows($results) > 0) {
-            while ($row = mysqli_fetch_array($results)) {
-                // Increase the $cell counter
-                if ($cell == 3) {
-                    $cell = 1; // Reset to the first column if it reaches 3
-                } else {
-                    $cell++;
-                }
-
-                // Depending on the $cell value, decide which column the card will go to
-                if ($cell == 1) {
-                    // Left column
-                    echo '
-                        <div class="cards col-span-full l-col-start-1 l-col-span-2">
-                            <img src="images/' . $row['thumbnail'] . '" alt="main">
-                            <h3>' . $row['title'] . '</h3>
-                            <h3>' . $row['category'] . '</h3>
-                            <div class="button-mini">
-                                <a href="detail.php?id=' . $row['project'] . '"><p>view project</p></a>
-                            </div>
-                        </div>';
-                } else if ($cell == 2) {
-                    // Middle column
-                    echo '
-                        <div class="cards col-span-full l-col-start-5 l-col-span-2">
-                            <img src="images/' . $row['thumbnail'] . '" alt="main">
-                            <h3>' . $row['title'] . '</h3>
-                            <h3>' . $row['category'] . '</h3>
-                            <div class="button-mini">
-                                <a href="detail.php?id=' . $row['project'] . '"><p>view project</p></a>
-                            </div>
-                        </div>';
-                } else {
-                    // Right column
-                    echo '
-                        <div class="cards col-span-full l-col-start-9 l-col-span-2">
-                            <img src="images/' . $row['thumbnail'] . '" alt="main">
-                            <h3>' . $row['title'] . '</h3>
-                            <h3>' . $row['category'] . '</h3>
-                            <div class="button-mini">
-                                <a href="detail.php?id=' . $row['project'] . '"><p>view project</p></a>
-                            </div>
-                        </div>';
-                }
-            }
+if ($stmt && $stmt->rowCount() > 0) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        // Increase the $cell counter
+        if ($cell == 3) {
+            $cell = 1; // Reset to the first column if it reaches 3
         } else {
-            echo "No projects found.";
+            $cell++;
         }
-        ?>
+
+        // Define column positions based on $cell value
+        $columnClass = '';
+        if ($cell == 1) {
+            $columnClass = 'l-col-start-1 l-col-span-2';
+        } elseif ($cell == 2) {
+            $columnClass = 'l-col-start-5 l-col-span-2';
+        } else {
+            $columnClass = 'l-col-start-9 l-col-span-2';
+        }
+
+        echo "
+            <div class='cards col-span-full $columnClass'>
+                <img src='images/" .($row['thumbnail']) . "' alt='main'>
+                <h3>" .($row['title']) . "</h3>
+                <h3>" .($row['category']) . "</h3>
+                <div class='button-mini'>
+                    <a href='detail.php?id=" .($row['project']) . "'><p>view project</p></a>
+                </div>
+            </div>";
+    }
+} else {
+    echo "No projects found.";
+}
+?>
     </div>
 </div>
 
@@ -339,7 +327,7 @@ $results = mysqli_query($connect, $query);
             <input name="email" type="email" required placeholder="Email">
             <input name="phone" type="text" required placeholder="Phone">
             <div class="custom-select col-span-full">
-                <select id="help" name="help" class="form-select" required>
+                <select id="help" name="reason" class="form-select" required>
                     <option value="" disabled selected>How can I help</option>
                     <option value="design">Design</option>
                     <option value="web">Web</option>
@@ -398,15 +386,11 @@ $results = mysqli_query($connect, $query);
     </footer>
 
 
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/thirdparty.js"></script>
+    <script src="js/main.js"></script>
    
 </body>
 

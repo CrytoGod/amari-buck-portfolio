@@ -2,13 +2,20 @@
 <?php
 require_once('include/connect.php');
 
-$query = "SELECT projects.id AS project, projects.title, projects.project_brief, projects.done_by, projects.market_analyise, projects.brand_strategy, projects.design_process, projects.challenges, projects.conclusion_and_learnings,projects.links_to_other_projects, projects.thumbnail, GROUP_CONCAT(media.image_video) AS media FROM projects JOIN media ON projects.id = media.project_id WHERE projects.id = " . $_GET['id'] . " GROUP BY projects.id";
+$query = "SELECT projects.id AS project, projects.title, projects.project_brief, projects.done_by, projects.market_analyise, projects.brand_strategy, projects.design_process, projects.challenges, projects.conclusion_and_learnings,projects.links_to_other_projects, projects.thumbnail, GROUP_CONCAT(media.image_video) AS media FROM projects JOIN media ON projects.id = media.project_id WHERE projects.id = :id GROUP BY projects.id";
 
 
+$stmt = $connect->prepare($query);
+$id = $_GET['id'];
+$stmt->bindParam(':id', $id , PDO::PARAM_INT);
 
-$results = mysqli_query($connect,$query);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$row = mysqli_fetch_assoc($results);
+$stmt = null;
+// $results = mysqli_query($connect,$query);
+
+// $row = mysqli_fetch_assoc($results);
 
 $image_array = explode(',', $row['media']);
 
@@ -177,15 +184,16 @@ $image_array = explode(',', $row['media']);
 <div id="portfolio-cards" class="col-span-full">
 <div class="row">
 <?php
-$query2 = 'SELECT projects.id AS project, projects.title,thumbnail, projects.project_brief, category.title AS category, GROUP_CONCAT(media.image_video) AS media_files FROM projects JOIN media ON projects.id = media.project_id JOIN category ON category.id = projects.category_id GROUP BY projects.id
-';
+$query2 = 'SELECT projects.id AS project, projects.title, thumbnail, projects.project_brief, category.title AS category, GROUP_CONCAT(media.image_video) AS media_files FROM projects JOIN media ON projects.id = media.project_id JOIN category ON category.id = projects.category_id GROUP BY projects.id';
 
-$results2 = mysqli_query($connect, $query2);
+$stmt2 = $connect->prepare($query2);
+$stmt2->execute();
+
 // Initialize $cell variable for column control
 $cell = 0;
 
-if ($results && mysqli_num_rows($results) > 0) {
-    while ($row = mysqli_fetch_array($results2)) {
+if ($stmt2->rowCount() > 0) {
+    while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
         // Increase the $cell counter
         if ($cell == 3) {
             $cell = 1; // Reset to the first column if it reaches 3
@@ -193,46 +201,31 @@ if ($results && mysqli_num_rows($results) > 0) {
             $cell++;
         }
 
-        // Depending on the $cell value, decide which column the card will go to
+        // Define column positions based on $cell value
+        $columnClass = '';
         if ($cell == 1) {
-            // Left column
-            echo '
-                <div class="cards col-span-full l-col-start-1 l-col-span-2">
-                    <img src="images/' . $row['thumbnail'] . '" alt="main">
-                    <h3>' . $row['title'] . '</h3>
-                    <h3>' . $row['category'] . '</h3>
-                    <div class="button-mini">
-                        <a href="detail.php?id=' . $row['project'] . '"><p>view project</p></a>
-                    </div>
-                </div>';
-        } else if ($cell == 2) {
-            // Middle column
-            echo '
-                <div class="cards col-span-full l-col-start-5 l-col-span-2">
-                    <img src="images/' . $row['thumbnail'] . '" alt="main">
-                    <h3>' . $row['title'] . '</h3>
-                    <h3>' . $row['category'] . '</h3>
-                    <div class="button-mini">
-                        <a href="detail.php?id=' . $row['project'] . '"><p>view project</p></a>
-                    </div>
-                </div>';
+            $columnClass = 'l-col-start-1 l-col-span-2';
+        } elseif ($cell == 2) {
+            $columnClass = 'l-col-start-5 l-col-span-2';
         } else {
-            // Right column
-            echo '
-                <div class="cards col-span-full l-col-start-9 l-col-span-2">
-                    <img src="images/' . $row['thumbnail'] . '" alt="main">
-                    <h3>' . $row['title'] . '</h3>
-                    <h3>' . $row['category'] . '</h3>
-                    <div class="button-mini">
-                        <a href="detail.php?id=' . $row['project'] . '"><p>view project</p></a>
-                    </div>
-                </div>';
+            $columnClass = 'l-col-start-9 l-col-span-2';
         }
+
+        echo "
+            <div class='cards col-span-full $columnClass'>
+                <img src='images/" .($row['thumbnail']) . "' alt='main'>
+                <h3>" .($row['title']) . "</h3>
+                <h3>" .($row['category']) . "</h3>
+                <div class='button-mini'>
+                    <a href='detail.php?id=" .($row['project']) . "'><p>view project</p></a>
+                </div>
+            </div>";
     }
 } else {
     echo "No projects found.";
 }
 ?>
+
 </div>
 </div>
 
