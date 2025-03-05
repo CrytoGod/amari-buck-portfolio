@@ -9,6 +9,24 @@
     overflow: hidden;
 }
 
+#get-in-touch-3{
+
+    margin: 50px auto;
+    
+    @media screen and (min-width: 768px) { 
+        
+        margin-top: -50px;
+        margin-left: 0px;
+  
+    }
+      
+    @media screen and (min-width: 1200px) { 
+        
+      margin-top: -50px;
+      margin-left: 0px;
+  
+  }
+  }
 
 .detail-main {
     font-size: 64px;

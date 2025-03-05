@@ -1,7 +1,7 @@
 .wit{
     color: white;
     font-size: 64px;
-    margin-top: 120px;
+    margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 50px;
@@ -12,11 +12,11 @@
     max-width: 100%;
     height: 1450px;
     z-index: -1;
-    margin-top: -5px;
+    margin-top: 50px;
 }
 
 .lig{
-    color: #6699CC;
+    color: #fff;
     font-size: 32px;
     
     margin-right: auto;
@@ -42,6 +42,23 @@
 }
 
 
+.lig-3{
+  color: #6699CC;
+  font-size: 32px;
+  
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.lig-4{
+  color: #6699CC;
+  font-size: 32px;
+  
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 
 
 
@@ -117,6 +134,7 @@
     cursor: pointer;
     outline: none;
   }
+
   
   /* Adding a custom arrow to the dropdown */
   .custom-select::after {
@@ -165,14 +183,6 @@
 
 
   @media screen and (min-width: 1200px) {
-  .wit{
-    color: white;
-    font-size: 64px;
-    margin-top: 120px;
-    margin-left: 0;
-   
-    margin-bottom: 50px;
-}
 
 .desktop-2 {
     margin-top: -370px;

@@ -28,7 +28,7 @@ $image_array = explode(',', $row['media']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="images/Madzen-browser-icon.ico"  rel="icon" type="image/x-icon">
+    <link href="images/madzen-logo-aqua.svg"  rel="icon" type="image/x-icon">
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -39,32 +39,40 @@ $image_array = explode(',', $row['media']);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    
-    <title>Mazen Project Info</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <!-- <script defer src="js/thirdparty.js"></script> -->
+    <script defer type="module" src="js/main.js"></script>
+    <title>Madzen</title>
 </head>
+
 <body>
-<header id="header-con">
+    
+
+    <header id="header-con">
         <h1 class="hidden">Welcome, To ME!!!! all Me aka Mari</h1>
-        <div class="grade mob"></div>
   <div class="grid-con">
     <!-- Logo Section -->
-    <div class="grade desktop col-span-full m-col-start-1 m-col-end-13"></div>
         <div class="col-span-full m-col-start-1 m-col-end-6 top">
-          <img src="images/madzen-logo-aqua-copy.svg" alt="logo" class="logo">
+          <img src="images/madzen-logo-aqua.svg" alt="logo" class="logo">
+        </div>
 
                <!-- Navigation Menu -->
-          <nav id="main-nav-2" class="col-span-full m-col-start-4 m-col-end-11">
+          <nav id="main-nav" class="col-span-full m-col-start-4 m-col-end-11">
      
               <button class="button"></button>
                  <div class="burger-con">
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a class="project-scroll" href="#p">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
                         
                     </ul>
                   </div>
            </nav>
+        
         </div>
     
 </header>
@@ -73,14 +81,23 @@ $image_array = explode(',', $row['media']);
 <section>
 
     <div class="grid-con">
-        <h2 class="col-span-full detail-main">This One Caught Your Eye?</h2>
-    </div>
+    <div class="col-span-full m-col-start-1 m-col-end-7">
+            <h2 class="typewriter2">This One Caught Your Eye?</h2>
+        </div>
 
-        <div class="grid-con">
-            <p class="col-span-full p-main" id="pm">Let my visuals nourish your mind and enjoy the creative ambiance. Allow me to guide you through my process step by step, 
-                providing all the details for this project below.</p>
+        <div class="col-span-full m-col-start-1 m-col-end-7 left-align recent" id="whitey">
+            <p>Let my visuals nourish your mind and enjoy the creative ambiance. Allow me to guide you through my process step by step, 
+            providing all the details for this project below.</p>
+        </div>
 
-            </div>
+        <img src="images/arrow.svg" alt="arrow" class="desk abt-img-prof2 col-span-full m-col-start-7 m-col-end-13">
+
+        <a href="#contact-hero-form">
+        <div class="button col-span-full m-col-start-1 m-col-end-4 l-col-start-1 l-col-end-4" id="get-in-touch-3">
+            <p>Get In Touch</p>
+        </div>
+        </a>
+</div>
 
 
 
@@ -126,7 +143,7 @@ $image_array = explode(',', $row['media']);
                     </section>
 
     
-                    <div class="col-span-full l-col-start-8 l-col-end-13 main-image"> 
+                    <div class="col-span-full l-col-start-8 l-col-end-13 main-image2"> 
                         <img src="images/'.$image_array[1].'" alt="main">
                     </div> ' ; ?>
 
@@ -236,46 +253,69 @@ if ($stmt2->rowCount() > 0) {
 </div>   
 
 
+    <!-- Contact Section -->
+    <div class="blue-2">
+        <section class="grid-con">
+            <h2 class="col-span-full wit">Contact Me</h2>
+            <h3 class="col-span-full l-col-start-1 l-col-end-6 lig">This Is Where the Magic Happens</h3>
+            <p class="col-span-full l-col-start-1 l-col-end-6 wit-2">
+                Let's turn the impossible into reality! I'll be in touch within 2 business days.
+            </p>
+            <h3 class="col-span-full lig-2">Let's Link Up</h3>
+        </section>
 
+        <div id="contact-hero-form" class="grid-con">
+            <div class="col-span-full l-col-start-1 l-col-end-7">
+                <form method="post" action="send_mail.php">
+                    <input name="fullname" type="text" placeholder="First & Last Name" required>
+                    <input name="email" type="email" required placeholder="Email">
+                    <input name="phone" type="text" required placeholder="Phone">
+                    <div class="custom-select col-span-full">
+                        <select id="help" name="reason" class="form-select" required>
+                            <option value="" disabled selected>How can I help</option>
+                            <option value="design">Design</option>
+                            <option value="web">Web</option>
+                        </select>
+                    </div>
+            </div>   
+            <div class="col-span-full l-col-start-7 l-col-end-13">       
+                <textarea name="comments" placeholder="Enter your questions, comments, or concerns here..." required></textarea>
+                <input name="submit" type="submit" value="Send">
+                </form>
+            </div>  
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
-      <div class="grid-con">
-        <nav id="footer-nav" class="col-start-1 col-end-3 m-col-start-1 m-col-end-4">
-          <div>
-            <ul>
-              <li><a href="#contact">CONTACT</a></li>
-              <li><a href="#p">PROJECTS</a></li>
-              <li><a href="#about">ABOUT</a></li>
-            </ul>
-          </div>
-        </nav>
-        <nav id="footer-nav" class="col-start-3 col-end-5 m-col-start-4 m-col-end-7">
-            <div>
-              <ul>
-                <li><a href="#">TERMS OF USE </a></li>
-                <li><a href="#">PRIVACY POLICY </a></li>
-                
-              </ul>
+        <div class="grid-con">
+            <nav id="footer-nav" class="col-span-full">
+                <ul>
+                   
+                    <li><a href="#projects">. PROJECTS</a></li>
+                    <li><a href="#about">. ABOUT</a></li>
+                    <li><a href="#">. TERMS OF USE</a></li>
+                    <li><a href="#">. PRIVACY POLICY</a></li>
+                </ul>
+            </nav>
+
+            <div id="footer-nav-2" class="col-span-full">
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/amari-buck-ba1932323/" target="_blank"><img src="images/linkedin.svg" alt="LinkedIn" class="icon"></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61573489544363" target="_blank"><img src="images/facebook.svg" alt="facebook" class="icon"></a></li>
+                    <li><a href="https://www.instagram.com/amarimadzen/" target="_blank"><img src="images/instagram.svg" alt="Instagram" class="icon"></a></li>
+                </ul>
             </div>
-          </nav>
-          <img src="images/contact-icon.svg" alt="icon" class="col-span-full l-col-start-2 l-col-end-8 icon">
-
-          <p class="col-span-full l-col-start-1 l-col-end-9 wit-3">All prices and services on this website and in our reservation system are based on conditions at the time of publishing and are subject to change. Please 
-            contact us to confirm services, availability and pricing. ©2024 Amari Buck. All Rights Reserved. Privacy policy  </p>
-
-      </div>
-      <img src="images/anime-japanese-character-removebg-preview.png" alt="jp" class="col-span-full jpp">
+            
+            <p class="col-span-full wit-3">©2024 Amari Buck. All Rights Reserved.</p>
+        </div>
     </footer>
 
 
 
 
 
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/thirdparty.js"></script>
+   
    
 </body>
 </html>
