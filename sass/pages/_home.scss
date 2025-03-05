@@ -27,24 +27,33 @@ body {
 #main-image img{
   width: 100%;
   height: auto;
-  
+  border-radius: 20px;
   margin: 0;
   overflow: hidden; /* Hides excess parts, if needed */
 }
 
-.main-image {
-  max-width: 100%;
-  
-  margin: 0;
-  overflow: hidden; /* Hides excess parts, if needed */
-}
-
-.main-image img {
+.main-image2 img {
   width: 100%;
   
   margin: 0;
   overflow: hidden; /* Hides excess parts, if needed */
 }
+
+.main-image{
+  margin: 0 auto;
+  width: 412px;
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) { 
+      width: 450px;
+      margin-top: -100px;
+
+  }
+  @media screen and (min-width: 1200px) { 
+    width: 600px;
+    margin-top: -100px;
+
+}
+} 
 
 
 #zima-banner{
@@ -63,11 +72,33 @@ body {
   margin-top: 100px;
 }
 
-#typewriter{
-  height: 30vh;
+.typewriter{
+  height: 20vh;
   @media screen and (min-width: 768px) { 
-    height: 10vh;
+    height: 18vh;
   }
+  @media screen and (min-width: 1200px) { 
+    height: 8vh;
+  }
+}
+
+#get-in-touch2{
+
+  margin: 50px auto;
+  
+  @media screen and (min-width: 768px) { 
+      
+      margin-top: -100px;
+      margin-left: 0px;
+
+  }
+    
+  @media screen and (min-width: 1200px) { 
+      
+    margin-top: -220px;
+    margin-left: 0px;
+
+}
 }
 
 @media screen and (min-width: 768px) { 
@@ -116,6 +147,13 @@ body {
 
     
   }
+  #d {
+    margin-top: 100px;
+  }
+
+
+
+  
 }
 
 @media screen and (min-width: 1200px) { 

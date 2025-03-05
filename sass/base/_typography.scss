@@ -7,10 +7,23 @@
   font-weight: 100;
   opacity: 48%;
   margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 15px;
+  }
+
+}
+
+.typewriter{
+  font-size: 72px;
+  font-weight: 600;
+  color: #000094;
+  margin-top: 20px;
   text-align: center;
 }
 
-#typewriter{
+.typewriter2{
   font-size: 72px;
   font-weight: 600;
   color: #000094;
@@ -35,13 +48,22 @@
     text-align: left;
   }
 
-  #typewriter{
+  .typewriter{
     font-size: 72px;
     font-weight: 600;
     color: #000094;
     margin-top: 20px;
     text-align: left;
   }
+
+  .typewriter2{
+    font-size: 72px;
+    font-weight: 600;
+    color: #000094;
+    margin-top: 20px;
+    text-align: left;
+  }
+
   #whitey {
     text-align: left;
     margin: 50px 0px 80px 0px;
