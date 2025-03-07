@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once('../includes/connect.php');
+require_once('../include/connect-live.php');
 $query = 'SELECT * FROM users WHERE username = ? AND password =?';
 $stmt = $connect->prepare($query);
 $stmt->bindParam(1, $_POST['username'], PDO::PARAM_STR);

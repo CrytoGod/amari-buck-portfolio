@@ -6,7 +6,7 @@ if(!isset($_SESSION['username'])) {
   header('location: login_form.php');
 }
 
-require_once('../includes/connect.php');
+require_once('../include/connect-live.php');
 $query = 'SELECT * FROM projects WHERE projects.id = :projectId';
 $stmt = $connection->prepare($query);
 $projectId = $_GET['id'];

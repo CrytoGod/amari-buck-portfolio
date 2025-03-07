@@ -1,4 +1,6 @@
 export function videoCon() {
+  console.log("bingo");
+
   const playerCon = document.querySelector(".player-container");
   const player = document.querySelector("video");
   const videoControls = document.querySelector("#video-controls");

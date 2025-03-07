@@ -49,12 +49,14 @@ $stmt->execute();
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
     <!-- <script defer src="js/thirdparty.js"></script> -->
     <script defer src="js/contact-form.js"></script>
-
+    <script defer src="js/scroll-trig.js"></script>
+    <script defer src="js/scrollto.js"></script>
     <script type="module" src="js/main.js"></script>
     <title>Madzen</title>
 </head>
 
 <body>
+    <main class="svg-container">
     <h1 class="hidden">Welcome, To ME!!!! all Me aka Mari</h1>
 
     <header id="header-con">
@@ -97,7 +99,7 @@ $stmt->execute();
 
         <img src="images/kiku-bk-less.png" alt="earbuds" class="desk main-image col-span-full m-col-start-7 m-col-end-13">
 
-        <a href="#contact-hero-form">
+        <a class="btn-scroll" href="#contact-hero-form">
         <div class="button col-span-full m-col-start-1 m-col-end-4 l-col-start-1 l-col-end-4" id="get-in-touch2">
             <p>Get In Touch</p>
         </div>
@@ -115,14 +117,14 @@ $stmt->execute();
         <div class="grid-con">
         <h3 class="col-span-full top-header" id="p2">Demo Reel</h3>
 
-        <div class="first-blue col-start-1 col-end-4 m-col-start-1 m-col-end-7"></div>
+        <div class="first-blue col-start-1 col-end-4 m-col-start-1 m-col-end-7 trigger3"></div>
         </div>
 
 
         <div class="grid-con">
 
         
-            <section id="player-container" class="col-span-full player-container">
+            <section id="player-container" class="col-span-full player-container trigger1">
                
               <video controls preload="metadata" poster="images/placeholder.png">
                 <source src="video/final.3.mp4" type="video/mp4" />
@@ -153,7 +155,7 @@ $stmt->execute();
             </section>
           </div>
           <div class="grid-con">
-          <div class="sec-blue col-start-2 col-end-5 m-col-start-6 m-col-end-13 l-col-start-6 l-col-end-13"></div>
+          <div class="sec-blue col-start-2 col-end-5 m-col-start-6 m-col-end-13 l-col-start-6 l-col-end-13 trigger4"></div>
           </div>
 
     </section>
@@ -228,7 +230,7 @@ if ($stmt && $stmt->rowCount() > 0) {
             <h3 class="col-span-full lig-2">Let's Link Up</h3>
         </section>
 
-        <div id="contact-hero-form" class="grid-con">
+        <div id="contact-hero-form" class="grid-con trigger2">
             <div class="col-span-full l-col-start-1 l-col-end-7">
                 <form id="contactForm">
                     <input name="fullname" type="text" placeholder="First & Last Name">
@@ -280,7 +282,7 @@ if ($stmt && $stmt->rowCount() > 0) {
 
 
 
-   
+    </main>  
 </body>
 
 

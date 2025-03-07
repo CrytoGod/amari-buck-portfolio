@@ -43,7 +43,6 @@ a{
 a:hover{
   display: inline;
   text-decoration: none;
-  color: white;
 }
 
 .button-mini {
@@ -79,6 +78,14 @@ a:hover{
 
   
 }
+
+.button-mini a:hover {
+  color: white;
+
+  
+}
+
+
 
 .card {
   padding: 20px;

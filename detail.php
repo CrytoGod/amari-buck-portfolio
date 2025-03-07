@@ -28,7 +28,7 @@ $image_array = explode(',', $row['media']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="images/madzen-logo-aqua.svg"  rel="icon" type="image/x-icon">
+    <link href="images/m-logo.svg"  rel="icon" type="image/x-icon">
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -44,7 +44,10 @@ $image_array = explode(',', $row['media']);
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
     <!-- <script defer src="js/thirdparty.js"></script> -->
-    <script defer type="module" src="js/main.js"></script>
+    <script defer src="js/contact-form.js"></script>
+    <script defer src="js/scroll-trig.js"></script>
+    <script defer src="js/scrollto.js"></script>
+    <script type="module" src="js/main.js"></script>
     <title>Madzen</title>
 </head>
 
@@ -93,7 +96,7 @@ $image_array = explode(',', $row['media']);
         <img src="images/arrow.svg" alt="arrow" class="desk abt-img-prof2 col-span-full m-col-start-7 m-col-end-13">
 
         <a href="#contact-hero-form">
-        <div class="button col-span-full m-col-start-1 m-col-end-4 l-col-start-1 l-col-end-4" id="get-in-touch-3">
+        <div class="button col-span-full m-col-start-1 m-col-end-4 l-col-start-1 l-col-end-4 desktop" id="get-in-touch-3">
             <p>Get In Touch</p>
         </div>
         </a>
@@ -102,7 +105,7 @@ $image_array = explode(',', $row['media']);
 
 
 <div class="grid-con">
-    <?php echo '<div class="lower-header col-span-full"> <p>' . $row['title'] . '</p> </div>'; ?>
+    <?php echo '<div class="lower-header  down col-span-full"> <p>' . $row['title'] . '</p> </div>'; ?>
     </div>
 
 
@@ -253,8 +256,8 @@ if ($stmt2->rowCount() > 0) {
 </div>   
 
 
-    <!-- Contact Section -->
-    <div class="blue-2">
+   <!-- Contact Section -->
+   <div class="blue-2">
         <section class="grid-con">
             <h2 class="col-span-full wit">Contact Me</h2>
             <h3 class="col-span-full l-col-start-1 l-col-end-6 lig">This Is Where the Magic Happens</h3>
@@ -264,23 +267,26 @@ if ($stmt2->rowCount() > 0) {
             <h3 class="col-span-full lig-2">Let's Link Up</h3>
         </section>
 
-        <div id="contact-hero-form" class="grid-con">
+        <div id="contact-hero-form" class="grid-con trigger2">
             <div class="col-span-full l-col-start-1 l-col-end-7">
-                <form method="post" action="send_mail.php">
-                    <input name="fullname" type="text" placeholder="First & Last Name" required>
-                    <input name="email" type="email" required placeholder="Email">
-                    <input name="phone" type="text" required placeholder="Phone">
-                    <div class="custom-select col-span-full">
-                        <select id="help" name="reason" class="form-select" required>
+                <form id="contactForm">
+                    <input name="fullname" type="text" placeholder="First & Last Name">
+                    <input name="phone" type="text"  placeholder="Phone">
+                    <input name="email" type="email"  placeholder="Email">
+                    <!-- <div class="custom-select col-span-full">
+                        <select id="help" name="reason" class="form-select" >
                             <option value="" disabled selected>How can I help</option>
                             <option value="design">Design</option>
                             <option value="web">Web</option>
                         </select>
-                    </div>
+                    </div> -->
             </div>   
             <div class="col-span-full l-col-start-7 l-col-end-13">       
-                <textarea name="comments" placeholder="Enter your questions, comments, or concerns here..." required></textarea>
+                <textarea name="comments" placeholder="Enter your questions, comments, or concerns here..." ></textarea>
                 <input name="submit" type="submit" value="Send">
+				<section id="feedback"><p>*Please fill out all required sections</p></section>
+
+
                 </form>
             </div>  
         </div>

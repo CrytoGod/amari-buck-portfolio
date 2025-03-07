@@ -1,30 +1,17 @@
-import {carrerAnimation} from './typewriter.js';
-carrerAnimation(); 
+import { carrerAnimation } from './typewriter.js';
+carrerAnimation();
 
-import {moveProducts} from './product-card.js';
-moveProducts(); 
+import { moveProducts } from './product-card.js';
+moveProducts();
 
-import {mainMenu} from './menu-bar.js';
-mainMenu(); 
+import { mainMenu } from './menu-bar.js';
+mainMenu();
 
-import {videoCon} from './video.js';
-videoCon(); 
+import { videoCon } from './video.js';
+videoCon();
 
-import {downDrop} from './drop-down.js';
-downDrop(); 
-
-import {srollT} from './scrollto.js';
-srollT(); 
-
-import {srollTr} from './scroll-trig.js';
-srollTr(); 
-
-
-
-
-
-
-
+import { downDrop } from './drop-down.js';
+downDrop();
 
 
 

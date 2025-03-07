@@ -2,7 +2,7 @@
 header("Content-Type: application/json; charset=UTF-8");
 
 
-require_once('include/connect.php'); // Ensure this contains the PDO connection as $connect
+require_once('include/connect-live.php'); // Ensure this contains the PDO connection as $connect
 
 // Gather the form content
 $fullname = $_POST['fullname'];
