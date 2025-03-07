@@ -32,7 +32,7 @@ $stmt->execute();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="images/madzen-logo-aqua.svg"  rel="icon" type="image/x-icon">
+    <link href="images/m-logo.svg"  rel="icon" type="image/x-icon">
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -48,7 +48,9 @@ $stmt->execute();
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
     <!-- <script defer src="js/thirdparty.js"></script> -->
-    <script defer type="module" src="js/main.js"></script>
+    <script defer src="js/contact-form.js"></script>
+
+    <script type="module" src="js/main.js"></script>
     <title>Madzen</title>
 </head>
 
@@ -228,21 +230,24 @@ if ($stmt && $stmt->rowCount() > 0) {
 
         <div id="contact-hero-form" class="grid-con">
             <div class="col-span-full l-col-start-1 l-col-end-7">
-                <form method="post" action="send_mail.php">
-                    <input name="fullname" type="text" placeholder="First & Last Name" required>
-                    <input name="email" type="email" required placeholder="Email">
-                    <input name="phone" type="text" required placeholder="Phone">
-                    <div class="custom-select col-span-full">
-                        <select id="help" name="reason" class="form-select" required>
+                <form id="contactForm">
+                    <input name="fullname" type="text" placeholder="First & Last Name">
+                    <input name="phone" type="text"  placeholder="Phone">
+                    <input name="email" type="email"  placeholder="Email">
+                    <!-- <div class="custom-select col-span-full">
+                        <select id="help" name="reason" class="form-select" >
                             <option value="" disabled selected>How can I help</option>
                             <option value="design">Design</option>
                             <option value="web">Web</option>
                         </select>
-                    </div>
+                    </div> -->
             </div>   
             <div class="col-span-full l-col-start-7 l-col-end-13">       
-                <textarea name="comments" placeholder="Enter your questions, comments, or concerns here..." required></textarea>
+                <textarea name="comments" placeholder="Enter your questions, comments, or concerns here..." ></textarea>
                 <input name="submit" type="submit" value="Send">
+				<section id="feedback"><p>*Please fill out all required sections</p></section>
+
+
                 </form>
             </div>  
         </div>
