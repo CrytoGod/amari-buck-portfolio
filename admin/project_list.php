@@ -7,7 +7,7 @@ if(!isset($_SESSION['username'])) {
   header('location: login_form.php');
 }
 
-require_once('../includes/connect.php');
+require_once('../include/connect-live.php');
 $stmt = $connection->prepare('SELECT id,title FROM projects ORDER BY title ASC');
 $stmt->execute();
 ?>

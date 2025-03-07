@@ -9,6 +9,10 @@
     overflow: hidden;
 }
 
+.down{
+    margin-top: 100px;
+}
+
 #get-in-touch-3{
 
     margin: 50px auto;
@@ -37,6 +41,32 @@
 }
 
 
+.abt-img-prof2 {
+    animation: moveUpDown 3s infinite;
+}
+
+/* Keyframes for the up and down movement */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.main-image2 img{
+    border-radius: 0 0 20px 20px;
+    max-width: 100%;
+    @media screen and (min-width: 1200px) { 
+        border-radius: 20px;
+    }
+
+}
 .p-main {
     font-size: 16px;
     color: #714B4B;

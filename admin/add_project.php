@@ -1,5 +1,5 @@
 <?php
-require_once('../includes/connect.php');
+require_once('../include/connect-live.php');
 
 // The uploading part is done entirely by the form; the form uploads the file to a temporary location, with some metadata information about the file in the $_FILES array, which we can use to move the file to its final location.
 

@@ -38,6 +38,20 @@
     }
 } 
 
+.abt-img-prof{
+    animation: bounceScaleMove 3s infinite;
+    transform-origin: center;
+}
+
+@keyframes bounceScaleMove {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(0) scale(1.2);
+    }
+}
+
 .abt-img-prof2{
     margin: 0 auto;
     width: 250px;

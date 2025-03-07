@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="images/madzen-logo-aqua.svg"  rel="icon" type="image/x-icon">
+        <link href="images/m-logo.svg"  rel="icon" type="image/x-icon">
         <link href="css/reset.css" rel="stylesheet">
         <link href="css/grid.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
@@ -19,7 +19,10 @@
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
         <!-- <script defer src="js/thirdparty.js"></script> -->
-        <script defer type="module" src="js/main.js"></script>
+        <script defer src="js/contact-form.js"></script>
+        <script defer src="js/scroll-trig.js"></script>
+        <script defer src="js/scrollto.js"></script>
+        <script type="module" src="js/main.js"></script>
         <title>Madzen</title>
     </head>
     
@@ -41,7 +44,7 @@
                      <div class="burger-con">
                         <ul>
                             <li><a href="index.php">Home</a></li>
-                            <li><a class="project-scroll" href="#p">Projects</a></li>
+                            <li><a class="project-scroll" href="index.php">Projects</a></li>
                             <li><a href="about.html">About</a></li>
                             
                         </ul>
@@ -69,13 +72,13 @@
         </div>
         </a>
 
-        <h3 class="col-span-full m-col-start-1 m-col-end-6 top-header">Skills:</h3>
+        <h3 class="col-span-full m-col-start-1 m-col-end-6 top-header trigger3">Skills:</h3>
 
         
 
         <div class="col-span-full">
-            <img src="images/skills-icon-desk.svg" alt="skills" class="skills  m-skills desktop">
-            <img src="images/skills-icons-mobile.svg" alt="skills" class="skills  m-skills mob">
+            <img src="images/skills-icon-desk.svg" alt="skills" class="skills  m-skills desktop trigger4">
+            <img src="images/skills-icons-mobile.svg" alt="skills" class="skills  m-skills mob trigger4">
         </div>
         
         
@@ -83,11 +86,11 @@
 
         <img src="images/file.svg" alt="My photo" class="desk abt-img col-span-full m-col-start-1 m-col-end-6" id="char">
         
-        <p class="col-span-full m-col-start-7 m-col-end-13 recent" id="down">
+        <p class="col-span-full m-col-start-7 m-col-end-13 recent trigger1" id="down">
             Hey there, I'm Amari, a proud graduate of the College of Fanshawe. Art has always been my passion, with drawing being my sanctuary since childhood. As I grew, my artistic journey naturally evolved into design, a realm seemingly different yet deeply intertwined with my creative spirit. Falling head over heels for this craft, I embraced it wholeheartedly, adding it to my arsenal of skills. I'm all about pushing boundaries and constantly honing my craft, striving to put my best foot forward with every project. I firmly believe in the endless possibilities that creativity holds, and I'm thrilled to embark on this journey with you. Let's turn your ideas into tangible realities, showing you that it's not just a fantasy but a promise waiting to be fulfilled
         </p>
 
-        <p class="col-span-full m-col-start-7 m-col-end-13 move-up recent" id="space">
+        <p class="col-span-full m-col-start-7 m-col-end-13 move-up recent trigger1" id="space">
             I embrace change and value your feedback above all else, your satisfaction is my priority. I'm dedicated to catering to your specific needs, standing firmly by my convictions and promises. Consistency and reliability are my hallmarks, guided by the principle of the 5 Ps: 
                 proper preparation prevents poor performance. When you choose to collaborate with me, you can expect nothing short of exceptional results that leave a lasting impression.
         </p>
@@ -112,39 +115,41 @@
         </a>
     </div>
 
-    <!-- Contact Section -->
-    <div class="blue-2">
-        <section class="grid-con">
-            <h2 class="col-span-full wit">Contact Me</h2>
-            <h3 class="col-span-full l-col-start-1 l-col-end-6 lig">This Is Where the Magic Happens</h3>
-            <p class="col-span-full l-col-start-1 l-col-end-6 wit-2">
-                Let's turn the impossible into reality! I'll be in touch within 2 business days.
-            </p>
-            <h3 class="col-span-full lig-2">Let's Link Up</h3>
-        </section>
+   <!-- Contact Section -->
+   <div class="blue-2">
+    <section class="grid-con">
+        <h2 class="col-span-full wit">Contact Me</h2>
+        <h3 class="col-span-full l-col-start-1 l-col-end-6 lig">This Is Where the Magic Happens</h3>
+        <p class="col-span-full l-col-start-1 l-col-end-6 wit-2">
+            Let's turn the impossible into reality! I'll be in touch within 2 business days.
+        </p>
+        <h3 class="col-span-full lig-2">Let's Link Up</h3>
+    </section>
 
-        <div id="contact-hero-form" class="grid-con">
-            <div class="col-span-full l-col-start-1 l-col-end-7">
-                <form method="post" action="send_mail.php">
-                    <input name="fullname" type="text" placeholder="First & Last Name" required>
-                    <input name="email" type="email" required placeholder="Email">
-                    <input name="phone" type="text" required placeholder="Phone">
-                    <div class="custom-select col-span-full">
-                        <select id="help" name="reason" class="form-select" required>
-                            <option value="" disabled selected>How can I help</option>
-                            <option value="design">Design</option>
-                            <option value="web">Web</option>
-                        </select>
-                    </div>
-            </div>   
-            <div class="col-span-full l-col-start-7 l-col-end-13">       
-                <textarea name="comments" placeholder="Enter your questions, comments, or concerns here..." required></textarea>
-                <input name="submit" type="submit" value="Send">
-                </form>
-            </div>  
-        </div>
+    <div id="contact-hero-form" class="grid-con trigger2">
+        <div class="col-span-full l-col-start-1 l-col-end-7">
+            <form id="contactForm">
+                <input name="fullname" type="text" placeholder="First & Last Name">
+                <input name="phone" type="text"  placeholder="Phone">
+                <input name="email" type="email"  placeholder="Email">
+                <!-- <div class="custom-select col-span-full">
+                    <select id="help" name="reason" class="form-select" >
+                        <option value="" disabled selected>How can I help</option>
+                        <option value="design">Design</option>
+                        <option value="web">Web</option>
+                    </select>
+                </div> -->
+        </div>   
+        <div class="col-span-full l-col-start-7 l-col-end-13">       
+            <textarea name="comments" placeholder="Enter your questions, comments, or concerns here..." ></textarea>
+            <input name="submit" type="submit" value="Send">
+            <section id="feedback"><p>*Please fill out all required sections</p></section>
+
+
+            </form>
+        </div>  
     </div>
-
+</div>
     <!-- Footer -->
     <footer class="footer">
         <div class="grid-con">

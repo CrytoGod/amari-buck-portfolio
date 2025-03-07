@@ -1,5 +1,5 @@
 <?php
-require_once('../includes/connect.php');
+require_once('../include/connect-live.php');
 $query = "UPDATE projects SET title = ?,image_url = ?,description= ? WHERE id = ?";
 
 $stmt = $connection->prepare($query);
