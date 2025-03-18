@@ -6,7 +6,7 @@
         scrollTrigger: {
           trigger: ".trigger1",
           toggleActions: "play none",
-          markers: true,
+          markers: false,
           start: "top 50%", 
           
           
@@ -22,7 +22,7 @@
         scrollTrigger: {
           trigger: ".trigger2",
           toggleActions: "play none",
-          markers: true,
+          markers: false,
           start: "top 50%", 
           
           
@@ -38,7 +38,7 @@
         scrollTrigger: {
           trigger: ".trigger3",
           toggleActions: "play none",
-          markers: true,
+          markers: false,
           start: "top 50%", 
           
           
@@ -53,7 +53,7 @@
         scrollTrigger: {
           trigger: ".trigger4",
           toggleActions: "play none",
-          markers: true,
+          markers: false,
           start: "top 50%", 
           
           

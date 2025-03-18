@@ -42,9 +42,15 @@ button {
   padding: 0;
   border: 0;
   background-color: transparent;
+  
 }
 
 /* FontAwesome icon styles */
+.fa {
+  font-size: 25px !important;
+  margin-bottom: 20px;
+}
+
 .fa, .fa-solid {
   color: #fff;
   font-size: 40px;
@@ -78,6 +84,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   background-color: #ffffff;
   border-radius: 0.5rem;
   height: 0.25rem;
+  margin-bottom: 20px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -88,6 +95,7 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 0.5rem;
   height: 0.8rem;
   width: 0.8rem;
+  
 }
 
 input[type="range"]:focus::-webkit-slider-thumb {
@@ -122,7 +130,7 @@ input[type="range"]:focus::-moz-range-thumb {
   position: absolute;
   bottom: 10px;
   left: 5%;
-  background-color: #d0e8f2; /* Light blue background */
+   /* Light blue background */
   border: none;
   appearance: none;
   margin: 0 auto;
@@ -134,7 +142,7 @@ input[type="range"]:focus::-moz-range-thumb {
   appearance: none;
   width: 12px;
   height: 12px;
-  background-color: #007bff; /* Blue thumb */
+  background-color: #000094; /* Blue thumb */
   border-radius: 50%;
   cursor: pointer;
 }
@@ -142,7 +150,7 @@ input[type="range"]:focus::-moz-range-thumb {
 #video-progress::-moz-range-thumb {
   width: 10px;
   height: 10px;
-  background-color: #007bff;
+  background-color: #000094;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -153,7 +161,7 @@ input[type="range"]:focus::-moz-range-thumb {
   height: 100px;
   background-color: #000094;
   z-index: 1;
-  margin-bottom: -50px;
+  margin-bottom: 80px;
   border-radius: 20px;
   overflow: hidden;
   margin-top: 70px;
@@ -164,7 +172,7 @@ input[type="range"]:focus::-moz-range-thumb {
   width: auto;
   height: 100px;
   background-color: #000094;
-  margin-top: -50px;
+  margin-top: 80px;
   border-radius: 20px;
 }
 

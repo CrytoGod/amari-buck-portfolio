@@ -1,10 +1,18 @@
 <?php
-require_once('../include/connect-live.php');
-$query = 'DELETE FROM projects WHERE projects.id = :projectId';
-$stmt = $connection->prepare($query);
+require_once('../include/connect.php');
+
 $projectId = $_GET['id'];
-$stmt->bindParam(':projectId', $projectId, PDO::PARAM_INT);
-$stmt->execute();
-$stmt = null;
+
+$mediaquery = 'DELETE FROM media WHERE project_id = :projectId';
+$stmt1 = $connect->prepare($mediaquery);
+$stmt1->bindParam(':projectId', $projectId, PDO::PARAM_INT);
+$stmt1->execute();
+
+$projectquery = 'DELETE FROM projects WHERE id = :projectId';
+$stmt2 = $connect->prepare($projectquery);
+$stmt2->bindParam(':projectId', $projectId, PDO::PARAM_INT);
+$stmt2->execute();
+
+
 header('Location: project_list.php');
 ?>

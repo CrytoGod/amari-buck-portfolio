@@ -2,7 +2,7 @@
 <?php
 require_once('include/connect.php');
 
-$query = "SELECT projects.id AS project, projects.title, projects.project_brief, projects.done_by, projects.market_analyise, projects.brand_strategy, projects.design_process, projects.challenges, projects.conclusion_and_learnings,projects.links_to_other_projects, projects.thumbnail, GROUP_CONCAT(media.image_video) AS media FROM projects JOIN media ON projects.id = media.project_id WHERE projects.id = :id GROUP BY projects.id";
+$query = "SELECT projects.id AS project, projects.title, projects.project_brief, projects.done_by, projects.market_analyise, projects.brand_strategy, projects.design_process, projects.challenges, projects.conclusion_and_learnings, projects.thumbnail, GROUP_CONCAT(media.image_video) AS media FROM projects JOIN media ON projects.id = media.project_id WHERE projects.id = :id GROUP BY projects.id";
 
 
 $stmt = $connect->prepare($query);

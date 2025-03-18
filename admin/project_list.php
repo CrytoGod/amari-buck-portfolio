@@ -7,8 +7,8 @@ if(!isset($_SESSION['username'])) {
   header('location: login_form.php');
 }
 
-require_once('../include/connect-live.php');
-$stmt = $connection->prepare('SELECT id,title FROM projects ORDER BY title ASC');
+require_once('../include/connect.php');
+$stmt = $connect->prepare('SELECT id,title FROM projects ORDER BY title ASC');
 $stmt->execute();
 ?>
 
@@ -37,13 +37,44 @@ $stmt = null;
 ?>
 <br><br><br>
 <h3>Add a New Project</h3>
+
+
 <form action="add_project.php" method="post" enctype="multipart/form-data">
     <label for="title">project title: </label>
     <input name="title" type="text" required><br><br>
-    <label for="img">project image: </label>
-    <input name="img" type="file" required><br><br>
-    <label for="desc">project description: </label>
-    <textarea name="desc" required></textarea><br><br>
+
+    <label for="image_video">Project Image: </label>
+    <input name="image_video" type="file" required><br><br>
+
+    <label for="done_by">Done By: </label>
+    <input name="done_by" type="text" required><br><br>
+
+    <label for="project_brief">Project Brief: </label>
+    <textarea name="project_brief" required></textarea><br><br>
+
+    <label for="market_analyise">Market Analysis: </label>
+    <textarea name="market_analyise" required></textarea><br><br>
+
+    <label for="brand_strategy">Brand Strategy: </label>
+    <textarea name="brand_strategy" required></textarea><br><br>
+
+    <label for="design_process">Design Process: </label>
+    <textarea name="design_process" required></textarea><br><br>
+
+    <label for="challenges">Challenges: </label>
+    <textarea name="challenges" required></textarea><br><br>
+
+    <label for="conclusion_and_learnings">Conclusion and Learnings: </label>
+    <textarea name="conclusion_and_learnings" required></textarea><br><br>
+
+    <label for="category_id">Category ID: </label>
+    <input name="category_id" type="text" required><br><br>
+    
+    <label for="image_video">Project Image: </label>
+    <input name="image_video" type="file" required><br><br>
+
+
+
     <input name="submit" type="submit" value="Add">
 </form>
 <br><br><br>
