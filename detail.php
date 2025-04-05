@@ -83,29 +83,12 @@ $image_array = explode(',', $row['media']);
 
 <section>
 
-    <div class="grid-con">
-    <div class="col-span-full m-col-start-1 m-col-end-7">
-            <h2 class="typewriter2">This One Caught Your Eye?</h2>
-        </div>
 
-        <div class="col-span-full m-col-start-1 m-col-end-7 left-align recent" id="whitey">
-            <p>Let my visuals nourish your mind and enjoy the creative ambiance. Allow me to guide you through my process step by step, 
-            providing all the details for this project below.</p>
-        </div>
-
-        <img src="images/arrow.svg" alt="arrow" class="desk abt-img-prof2 col-span-full m-col-start-7 m-col-end-13">
-
-        <a href="#contact-hero-form">
-        <div class="button col-span-full m-col-start-1 m-col-end-4 l-col-start-1 l-col-end-4 desktop" id="get-in-touch-3">
-            <p>Get In Touch</p>
-        </div>
-        </a>
-</div>
 
 
 
 <div class="grid-con">
-    <?php echo '<div class="lower-header  down col-span-full"> <p>' . $row['title'] . '</p> </div>'; ?>
+    <?php echo '<div class="lower-header   col-span-full"> <p>' . $row['title'] . '</p> </div>'; ?>
     </div>
 
 
@@ -232,14 +215,16 @@ if ($stmt2->rowCount() > 0) {
         }
 
         echo "
-            <div class='cards col-span-full $columnClass'>
+        <a href='detail.php?id=" .($row['project']) . "' class='card-link'>
+            <div class='cards'>
                 <img src='images/" .($row['thumbnail']) . "' alt='main'>
                 <h3>" .($row['title']) . "</h3>
                 <h3>" .($row['category']) . "</h3>
                 <div class='button-mini'>
-                    <a href='detail.php?id=" .($row['project']) . "'><p>view project</p></a>
+                    <p>view project</p>
                 </div>
-            </div>";
+            </div>
+        </a>"; 
     }
 } else {
     echo "No projects found.";

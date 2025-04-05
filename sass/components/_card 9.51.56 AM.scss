@@ -1,0 +1,148 @@
+#p {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+#p2 {
+  margin-bottom: -50px;
+  text-align: left;
+  @media (min-width: 1200px) {
+    margin-top: 150px;
+    margin-bottom: -100px;
+  }
+}
+
+.card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none; // Prevents underline
+  color: inherit; // Inherits the text color from parent
+}
+
+.cards {
+  width: 350px;
+  height: 406px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease-in-out;
+  
+ 
+
+  img {
+    border-radius: 20px 20px 0 0;
+    width: 350px;
+    height: 293px;
+  }
+
+  h3 {
+    color: #714B4B;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Ensure the entire card is clickable without affecting the layout
+
+
+a {
+  display: inline;
+  text-decoration: none;
+  color: #714B4B;
+
+  &:hover {
+    display: inline;
+    text-decoration: none;
+  }
+}
+
+.button-mini {
+  width: 144px;
+  height: 32px;
+  border-radius: 20px;
+  border: 1px solid #714B4B;
+  text-align: center;
+  align-self: flex-end;
+  color: #714B4B;
+  float: right;
+  margin-top: -30px;
+  margin-right: 20px;
+
+  p {
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+  }
+
+  &:hover {
+    background-color: #000094;
+    color: white;
+    border: 1px solid #000094;
+  }
+
+  a:hover {
+    color: white;
+  }
+}
+
+// Portfolio Section
+.portfolio-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 110vh;
+  position: absolute;
+}
+
+// Row: Grid on desktop, Flexbox for mobile
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 20px;
+  justify-content: center;
+  overflow-x: hidden; // Hide scrollbar
+
+  // Hide scrollbar for webkit browsers
+  &::-webkit-scrollbar {
+    display: none; // Webkit browsers
+  }
+}
+
+@media (max-width: 1200px) {
+  .row {
+    margin: 0 auto;
+    display: flex;
+    
+    justify-content: flex-start;
+  }
+
+ 
+}
+
+// Card styles
+.card {
+  width: 100%;
+  height: 410px;
+  border-radius: 20px;
+  margin: 0 38px 38px 38px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

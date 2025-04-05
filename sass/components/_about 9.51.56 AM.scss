@@ -1,0 +1,145 @@
+.blue{
+    background-color: #000094;
+    max-width: 100%;
+    height: 357px;
+    z-index: -1;
+    margin-top: -5px;
+}
+
+.white {
+    color: white;
+    font-size: 32px;
+    margin-top: -250px;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+.white-2 {
+    color: white;
+    font-size: 16px;
+    z-index: 1;
+    margin-bottom: 150px;
+    
+}
+
+.abt-img{
+    margin: 50px auto;
+    width: 412px;
+} 
+
+.abt-img-prof{
+    margin: 0 auto;
+    width: 300px;
+    border-radius: 20px;
+    @media screen and (min-width: 768px) { 
+        width: 300px;
+        margin-top: -100px;
+
+    }
+
+    @media screen and (min-width: 1200px) { 
+        width: 400px;
+        margin-top: -100px;
+
+    }
+} 
+
+
+
+.abt-img-prof2{
+    margin: 0 auto;
+    width: 250px;
+    @media screen and (min-width: 768px) { 
+        width: 250px;
+        margin-top: -150px;
+
+    }
+} 
+
+#get-in-touch{
+
+    margin: 50px auto;
+    
+    @media screen and (min-width: 768px) { 
+        
+        margin-top: -40px;
+        margin-left: 0px;
+
+    }
+}
+
+.m-skills{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+#space{
+    margin-top: 50px;
+}
+
+#down {
+    margin: 0;
+}
+
+#char {
+    width: 200px;
+}
+
+@media screen and (min-width: 768px) { 
+
+    #resume{
+        margin-left: 50px;
+    }
+
+    #git-hub{
+        margin-left: 180px;
+    }
+
+    #char {
+        width: 263px;
+    }
+    
+    .abt-img{
+      
+       margin-bottom: 100px;
+        width: 263px;
+        height: auto;
+    } 
+    
+
+    #down {
+       margin-top: 50px;
+    }
+
+    #space{
+        margin-top: -400px;
+        
+    }
+
+    
+
+}
+
+
+@media screen and (min-width: 1200px) { 
+
+
+    .abt-img{
+      
+       margin-bottom: 100px;
+        width: 263px;
+        height: auto;
+    } 
+    
+
+    #down {
+       margin-top: 150px;
+    }
+
+    #space{
+        margin-top: -400px;
+        
+    }
+
+}
