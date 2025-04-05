@@ -94,7 +94,7 @@ $stmt->execute();
         </div>
 
         <div class="col-span-full m-col-start-1 m-col-end-7 left-align recent" id="whitey">
-            <p>So, if my work has left you wondering, "Who is this guy?" let me introduce myself and give you the lowdown. And just so you know, the picture to the right is indeed me—no catfish here, I promise!</p>
+            <p>I specialize in creating engaging motion graphics and designing user-friendly, accessible websites that combine simplicity with effectiveness.</p>
         </div>
 
         <img src="images/kiku-bk-less.png" alt="earbuds" class="desk main-image col-span-full m-col-start-7 m-col-end-13">
@@ -186,24 +186,26 @@ if ($stmt && $stmt->rowCount() > 0) {
         }
 
         // Define column positions based on $cell value
-        $columnClass = '';
-        if ($cell == 1) {
-            $columnClass = 'l-col-start-1 l-col-span-2';
-        } elseif ($cell == 2) {
-            $columnClass = 'l-col-start-5 l-col-span-2';
-        } else {
-            $columnClass = 'l-col-start-9 l-col-span-2';
-        }
-
+        // $columnClass = '';
+        // if ($cell == 1) {
+        //     $columnClass = 'l-col-start-1 l-col-span-2';
+        // } elseif ($cell == 2) {
+        //     $columnClass = 'l-col-start-5 l-col-span-2';
+        // } else {
+        //     $columnClass = 'l-col-start-9 l-col-span-2';
+        // }
+        //<div class='cards col-span-full $columnClass'>
         echo "
-            <div class='cards col-span-full $columnClass'>
+        <a href='detail.php?id=" .($row['project']) . "' class='card-link'>
+            <div class='cards'>
                 <img src='images/" .($row['thumbnail']) . "' alt='main'>
                 <h3>" .($row['title']) . "</h3>
                 <h3>" .($row['category']) . "</h3>
                 <div class='button-mini'>
-                    <a href='detail.php?id=" .($row['project']) . "'><p>view project</p></a>
+                    <p>view project</p>
                 </div>
-            </div>";
+            </div>
+        </a>"; 
     }
 } else {
     echo "No projects found.";

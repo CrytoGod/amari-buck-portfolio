@@ -1,0 +1,29 @@
+.button {
+    width: 170px;
+    height: 38px;
+    border-radius: 20px;
+    border: 1px solid #714B4B;
+    text-align: center;
+    color: #714B4B;
+
+    
+}
+
+.button p {
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.button:hover {
+    width: 170px;
+    height: 38px;
+    border-radius: 20px;
+    border: 1px solid #000094;
+    text-align: center;
+    background-color: #000094;
+    color: white;
+
+    
+}
+
